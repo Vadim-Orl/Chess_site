@@ -1,10 +1,11 @@
+@import "./fonts.scss";
 
 
 
 @mixin Merriweather--400 {
   font-family: 'Merriweather';
   font-weight: 400;
-  font-size: 122px;
+  font-size: 36px;
   line-height: 110%;
 }
 
@@ -19,7 +20,7 @@
 @mixin GolosText--500 {
   font-family: 'GolosText';
   font-weight: 500;
-  font-size: 32px;
+  font-size: 16px;
   line-height: 32px;
 
 }

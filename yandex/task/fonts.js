@@ -8,8 +8,14 @@ const app =require("../config/app.js");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const newer = require("gulp-newer");
+// const webfont = require("gulp-webfont");
+var ttf2woff2 = require('gulp-ttf2woff2');
 
-
+// gulp.task('ttf2woff2', function(){
+//   gulp.src(['fonts/*.ttf'])
+//     .pipe(ttf2woff2())
+//     .pipe(gulp.dest('fonts/'));
+// });
 
 
 
@@ -21,6 +27,7 @@ const fonts = ()=> {
         message: error.message
       }))
     }))
+    .pipe(ttf2woff2())
     .pipe(newer(path.fonts.dest))
     .pipe(dest(path.fonts.dest))
 };

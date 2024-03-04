@@ -1,24 +1,16 @@
 
 
-*,::before,::after {
-  box-sizing: border-box;
-}
 
-.page-body {
-  // @include GolosText--400;
-  color: #313131;
 
-  // @include border-help(rgb(255, 128, 0), 2px);
-}
 
 .title {
-  @include Merriweather--400;
-  text-transform: uppercase;
+  // @include Merriweather--400;
+  // text-transform: uppercase;
 }
+
 
 .button--white {
   position: relative;
-
   color: $basic_dark-grey;
   background-color: $basic_white;
 }
@@ -38,7 +30,13 @@
 //   // width: 100%;
 //   // height: 100%;
 // }
-
+.span-right {
+  display: block;
+  text-align: right;
+}
+.span-center {
+  text-align: center;
+}
 .span--crossed {
   text-decoration: line-through $special_red;
 }

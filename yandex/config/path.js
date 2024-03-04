@@ -35,7 +35,7 @@ module.exports = {
   },
 
   fonts: {
-    src: pathSrc + "/fonts/*.{woff,woff2}",
+    src: pathSrc + "/fonts/*.{woff,woff2,ttf}",
     watch: pathSrc + "/fonts/**/*.{woff,woff2}",
     dest: pathDest + "/fonts"
   }
