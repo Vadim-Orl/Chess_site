@@ -1,0 +1,55 @@
+
+ .visually-hidden:not(:focus):not(:active),
+ input[type="checkbox"].visually-hidden,
+ input[type="radio"].visually-hidden {
+   position: absolute;
+
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+
+   white-space: nowrap;
+
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+
+ }
+
+.page-body {
+  font-family: 'Oswald';
+  color: black;
+  // min-width: 320px;
+
+
+  @media (min-width: $desktop-width){
+    margin: 0 $margin-desktop;
+  }
+
+  margin-bottom: 500px;
+}
+
+.a {
+  text-decoration: none;
+  color:black;
+  &:visited {
+    color:black;
+  }
+}
+
+.page__logo {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.button {
+  border-radius: 66px;
+  border: none;
+}

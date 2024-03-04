@@ -1,0 +1,48 @@
+.selection {
+
+}
+
+.selection__title {
+  @include reset;
+  margin-bottom: 37px;
+  margin-top: 27px;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $tablet-width){
+    margin-top: 65px;
+    margin-bottom: 54px;
+
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: $desktop-width){
+    margin-top: 74px;
+    margin-bottom: 56px;
+  }
+}
+
+.selection__text {
+  @include reset;
+  margin-bottom: 39px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (min-width: $tablet-width){
+    margin-bottom: 66px;
+    margin-left: 30px;
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (min-width: $desktop-width){
+    margin-left: 0;
+  }
+
+}

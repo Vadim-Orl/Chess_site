@@ -1,0 +1,60 @@
+.players {
+  margin-bottom: 100px;
+}
+
+.players__title {
+  @include Merriweather--400;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.players__list__wrapper {
+  margin-bottom: 40px;
+}
+
+.players__item {
+  @include GolosText--500;
+
+  align-items:center;
+
+}
+
+.players__author-image {
+  width: 244px;
+  height: 244px;
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.player__author-name {
+  // font-weight: 500;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: none;
+}
+
+.player__text {
+  // font-size: 20px;
+  // transform: translateX(10px);
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.player__button {
+  font-size: 16px;
+  min-width: 113px;
+  height: 35px;
+  background-color: $basic_white;
+  border: solid 1px $special_blue;
+
+  color: $special_blue;
+}

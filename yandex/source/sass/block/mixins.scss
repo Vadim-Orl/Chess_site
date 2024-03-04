@@ -1,0 +1,81 @@
+
+
+
+@mixin Merriweather--400 {
+  font-family: 'Merriweather';
+  font-weight: 400;
+  font-size: 122px;
+  line-height: 110%;
+}
+
+
+@mixin Merriweather--400--bold {
+  font-family: 'Merriweather-bold';
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+}
+
+@mixin GolosText--500 {
+  font-family: 'GolosText';
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 32px;
+
+}
+
+@mixin GolosText--400 {
+  font-family: 'GolosTex-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin border-help($size, $color) {
+  outline: $color solid $size;
+  outline-offset: -5px;
+}
+
+@mixin minus-margin-all {
+  @media (max-width: $mobile-width-only){
+    margin-left: -$margin-mobile;
+    margin-right: -$margin-mobile;
+  }
+
+  @media (min-width: $tablet-width){
+    margin-left: -$margin-tablet;
+    margin-right: -$margin-tablet;
+  }
+
+  @media (min-width: $desktop-width){
+    margin-left: -$margin-desktop;
+    margin-right: -$margin-desktop;
+  }
+}
+
+@mixin plus-padding-all {
+  @media (max-width: $mobile-width-only){
+    padding: 0 $margin-mobile ;
+  }
+
+  @media (min-width: $tablet-width){
+    padding: 0 $margin-tablet ;
+  }
+
+  @media (min-width: $desktop-width){
+    padding: 0 $margin-desktop ;
+  }
+}

@@ -1,0 +1,126 @@
+.promo {
+  @media (min-width: $tablet-width){
+    display: flex;
+    flex-direction: column;
+    padding-left: 64px;
+    padding-top: 90px;
+  }
+
+  @media (min-width: $desktop-width){
+    padding-left: 80px;
+    padding-top: 111px;
+    margin-bottom: 82px;
+  }
+  margin-bottom: 20px;
+}
+
+.promo__wrapper {
+  display: block;
+  // margin-left: -50px;
+
+  @media (max-width: $mobile-width-only){
+    width: calc(100% + $margin-mobile * 2);
+    height: 305px;
+    padding-top: 27px;
+    margin-left: -$margin-mobile;
+
+    background-color: #63A73A;
+    background-image: url("../img/index-background-mobile@1x.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+  }
+}
+
+.promo__title {
+  @include reset;
+
+
+  margin-bottom: 25px;
+  margin-left: $margin-mobile;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $tablet-width){
+    margin: 0;
+    margin-bottom: 41px;
+
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+}
+
+.promo__text {
+  @include reset;
+
+  margin-left: $margin-mobile;
+
+  font-size: 14px;
+  line-height: 14px;
+
+
+  @media (min-width: $tablet-width){
+
+    max-width: 40%;
+    margin: 0;
+    margin-bottom: 49px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.promo_img__wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 134px;
+
+  @media (min-width: $tablet-width){
+    order: 2;
+    height: 607px;
+    margin-left: -54px;
+  }
+
+  @media (min-width: $desktop-width){
+    height: 220px;
+  }
+}
+
+.promo__img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -120px;
+
+  @media (min-width: $tablet-width){
+    width: 709px;
+    height: 709px;
+    z-index: -10;
+    // left: 100px;
+    // right: 120px;
+  }
+
+  @media (min-width: $desktop-width){
+    width: 552px;
+    height: 499px;
+    top: -310px;
+    left: 150px;
+  }
+}
+
+.promo__button {
+  width: 100%;
+
+  @media (min-width: $tablet-width){
+    width: 244px;
+    height: 54px;
+    font-size: 20px;
+  }
+}

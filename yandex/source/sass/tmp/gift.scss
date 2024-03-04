@@ -1,0 +1,50 @@
+.gift {
+
+  background-image: url("../img/gift-photo-mobile@1x.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  margin: 0 auto;
+
+  margin-bottom: 20px;
+
+  width: 100%;
+  height: 290px;
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width){
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
+  @media (min-width: $desktop-width){
+    width: 245px;
+    height: 289px;
+  }
+}
+
+.gift__img{
+
+  margin-top: 57px;
+  @media (min-width: $tablet-width) and (max-width: $desktop-width){
+    margin: 0;
+  }
+
+}
+
+.gift__text{
+  @include reset;
+  width: 161px;
+  margin-bottom: 49px;
+  color: white;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width){
+    margin: 0;
+  }
+}
