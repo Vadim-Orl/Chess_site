@@ -1,0 +1,24 @@
+.line--run {
+  display: flex;
+  align-items:center;
+  background-color: $special_red;
+  text-transform: uppercase;
+  height: 38px;
+  margin-bottom: 40px;
+  @include Merriweather--400;
+
+  font-family: Merriweather;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 18px;
+
+
+  @media (min-width: $desktop-width){
+    height: 60px;
+
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+
+}

@@ -1,0 +1,101 @@
+.players {
+  margin-bottom: 90px;
+}
+
+.players__title {
+  @include Merriweather--400;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.players__list {
+  // margin: 0 20px;
+  overflow: hidden;
+}
+
+.player__list--wrapper {
+  display: flex;
+  width: 2170px;
+  height: 388px;
+  margin: 0 -20px;
+
+  transform: translateX(0px);
+  margin-bottom: 44px;
+}
+
+.players__item {
+  @include GolosText--500;
+  width: 335px;
+  height: 100%;
+  // align-items:center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0px;
+  margin-right: 20px;
+  // padding-top: 10px;
+}
+
+.players__author-image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  width: 244px;
+  height: 244px;
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // font-family: Golos Text;
+  // font-family: Golos Text;
+
+  // line-height: 24px;
+  // letter-spacing: 0px;
+  // text-align: left;
+
+// text-align: left;
+
+}
+
+
+.player__author-name {
+  // font-weight: 500;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: none;
+  margin-bottom: 10px;
+}
+
+.player__text {
+  // font-size: 20px;
+  // transform: translateX(10px);
+  display: block;
+  width: 100%;
+  // font-size: 16px;
+  // text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 400;
+
+  margin-bottom: 14px;
+}
+
+.player__button {
+  font-size: 16px;
+  min-width: 113px;
+  height: 35px;
+  background-color: $basic_white;
+  border: solid 1px $special_blue;
+  margin: 0 auto;
+  color: $special_blue;
+}
+
+.player__toggles {
+  margin-left: 20px;
+  margin-right: 20px;
+}

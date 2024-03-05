@@ -11,8 +11,8 @@
       <a class="page__logo page-header__logo" href="index.html">
 
         <picture>
-          <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />
-          <source srcset="img/logo-tablet.svg" media="(min-width: 1200px)" /> -->
+          <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" /> -->
+          <source srcset="img/logo_desc.svg" media="(min-width: 1200px)" />
           <img src="img/logo.svg"  alt="">
         </picture>
       </a>
@@ -24,7 +24,7 @@
         </h1>
 
         <p class="header__text">
-          Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+          Оплатите взнос на телеграммы <br class="br--mobile"> для организации <br class="br--desctop">Международного васюкинского турнира по шахматам
         </p>
 
         <div class="header__nav">
@@ -33,86 +33,98 @@
         </div>
 
       </content>
-      <p class="header__run-line">
-        <marquee>
-          <span class="header__run-text">Дело помощи утопающим — дело рук самих утопающих!</span>
+
+      <marquee class="line--run header__line">
+        <div class="footer__line__wrapper ">
+
+            <ul class="footer__line__list">
+              <li class="list__item-red-line">Дело помощи утопающим — дело рук самих утопающих!</li>
+              <li class="list__item-red-line">Шахматы двигают вперёд не только культуру, но и экономику!</li>
+              <li class="list__item-red-line">Лёд тронулся, господа присяжные заседатели!</li>
+            </ul>
+          </div>
         </marquee>
-      </p>
     </header>
 
     <main class="page-main">
 
       <section class="support">
+
         <article class="support__lecture">
           <h2 class="lecture__title">
-            Чтобы поддержать Международный васюкинский турнир
-          </h2>
-          <picture class="support__img lecture__img">
-            <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />
-            <source srcset="img/logo-tablet.svg" media="(min-width: 1200px)" /> -->
-            <img src="img/grossChess.png"  alt="">
-          </picture>
-          <h2 class="lecture__title">
-            посетите лекцию на тему: <span class="span__red">«Плодотворная дебютная идея»</span>
+            Чтобы поддержать Международный васюкинский турнир <span class="lecture__title--slice display-none">посетите лекцию на тему: <span class="span__red">«Плодотворная дебютная идея»</span></span>
           </h2>
 
+          <picture class="support__img lecture__img">
+            <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />-->
+            <source srcset="img/grossChess--desc.png" media="(min-width: 1200px)" />
+            <img src="img/grossChess.png"  alt="">
+          </picture>
+
+          <h2 class=" lecture__title lecture__title--second">
+              посетите лекцию на тему: <span class="span__red">«Плодотворная дебютная идея»</span>
+          </h2>
         </article>
 
 
         <article class="support__multiplayer">
           <picture class="support__img multiplayer__img">
-            <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />
-            <source srcset="img/logo-tablet.svg" media="(min-width: 1200px)" /> -->
-            <img src="img/gross-one1.png"  alt="">
+            <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />-->
+            <source srcset="img/gross-one1--desc.jpg" media="(min-width: 1200px)" />
+            <img src="img/gross-one1.jpg"  alt="">
           </picture>
 
           <div class="multiplayer__info">
             <h2 class="multiplayer__title">
-              и Сеанс <span class="span__red">одновременной игры в шахматы на 160 досках</span> гроссмейстера О.Бендера
+              и Сеанс <span class="span__red">одновременной игры в шахматы <br class="br--mobile"> на 160 досках</span> гроссмейстера <br class="br--mobile"> О. Бендера
 
             </h2>
+
+
             <ul class="multiplayer__info--list">
               <li class="multiplayer__info--item">
                 <dt class="info-list__item-category">Место проведения:</dt>
                 <dd class="info-list__item-value">Клуб «Картонажник»</dd>
-                <hr>
+                <!-- <hr> -->
               </li>
               <li class="multiplayer__info--item">
 
                 <dt class="info-list__item-category">Дата и время мероприятия:</dt>
                 <dd class="info-list__item-value"><span class="span--bold"><time>22 июня 1927 г. в 18:00</time></span></dd>
-                <hr>
+                <!-- <hr> -->
               </li>
               <li class="multiplayer__info--item">
-
-                <dt class="info-list__item-category">Плата за игру:</dt>
-                <dd class="info-list__item-value">20 коп.</dd>
-                <hr>
-              </li>
-              <li class="multiplayer__info--item">
-
                 <dt class="info-list__item-category">Стоимость входных билетов:</dt>
                 <dd class="info-list__item-value">50 коп.</dd>
-                <hr>
+
+                <!-- <hr> -->
+              </li>
+              <li class="multiplayer__info--item">
+                <dt class="info-list__item-category">Плата за игру:</dt>
+                <dd class="info-list__item-value">20 коп.</dd>
+
+                <!-- <hr> -->
               </li>
               <li class="multiplayer__info--item">
 
                 <dt class="info-list__item-category">Взнос на телеграммы:</dt>
-                <dd class="info-list__item-value"><span class="span--crossed">100 руб.</span> 21 руб. 16 коп.</dd>
-                <hr>
+                <dd class="info-list__item-value"><span class="span--crossed">100 руб.</span>21 руб. 16 коп.</dd>
+                <!-- <hr> -->
               </li>
             </ul>
-            <p class="text--blue multiplayer__qwechions">По всем вопросам обращаться в администрацию к К. Михельсону</p>
+            <p class="text--blue multiplayer__qwechions">По всем вопросам обращаться<br class="br--mobile"> в администрацию к К. Михельсону</p>
           </div>
 
         </article>
       </section>
 
       <section class="stages">
-        <h2 class="stages__title">
-          Этапы преображения Васюков
-        </h2>
-        <p class="text--blue stages__text">Будущие источники обогащения васюкинцев</p>
+        <div class="stages__header">
+          <h2 class="stages__title">
+            Этапы преображения Васюков
+          </h2>
+          <p class="text--blue stages__text">Будущие источники <br class="br--desc"> обогащения васюкинцев</p>
+        </div>
 
         <picture class="stages__img">
           <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />
@@ -120,23 +132,25 @@
           <img src="img/plane.png"  alt="">
         </picture>
 
-        <div class="stages__list--wrapper">
-          <div class="stages_block">
-            <p class="stages__item"><span>1</span>Строительство железнодорожной магистрали Москва-Васюки</p>
-            <p class="stages__item "><span>2</span>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
-          </div>
-          <div class="stages_block display-none">
-            <p class="stages__item"><span>3</span>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
-          </div>
-          <div class="stages_block display-none">
-            <p class="stages__item"><span>4</span>Строительство дворца для турнира</p>
-            <p class="stages__item"><span>5</span>Размещение гаражей для гостевого автотранспорта</p>
-          </div>
-          <div class="stages_block display-none">
-            <p class="stages__item"><span>6</span>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
-          </div>
-          <div class="stages_block display-none">
-            <p class="stages__item"><span>7</span>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
+        <div class="stages__list">
+          <div class="stages__list--wrapper">
+            <div class="stages_block">
+              <p class="stages__item"><span>1</span>Строительство железнодорожной магистрали Москва-Васюки</p>
+              <p class="stages__item "><span>2</span>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
+            </div>
+            <div class="stages_block">
+              <p class="stages__item"><span>3</span>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
+            </div>
+            <div class="stages_block">
+              <p class="stages__item"><span>4</span>Строительство дворца для турнира</p>
+              <p class="stages__item"><span>5</span>Размещение гаражей для гостевого автотранспорта</p>
+            </div>
+            <div class="stages_block">
+              <p class="stages__item"><span>6</span>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
+            </div>
+            <div class="stages_block">
+              <p class="stages__item"><span>7</span>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
+            </div>
           </div>
         </div>
 
@@ -169,8 +183,9 @@
 
       <section class="players">
         <h2 class="players__title">Участники турнира</h2>
-        <div class="players__list__wrapper">
-          <div>
+
+        <div class="players__list">
+          <div class="player__list--wrapper">
 
 
             <blockquote class="players__item slider__item">
@@ -186,8 +201,74 @@
               </div>
             </blockquote>
 
+            <blockquote class="players__item slider__item">
+              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+              <div class="reviews__author-info">
+                <cite class="player__author-name">
+                  Эммануил Ласкер
+                </cite>
+                <p class="player__text">
+                  Чемпион мира по шахматам
+                </p>
+                <button class="button player__button">Подробнее</button>
+              </div>
+            </blockquote>
+
+            <blockquote class="players__item slider__item">
+              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+              <div class="reviews__author-info">
+                <cite class="player__author-name">
+                  Александр Алехин
+                </cite>
+                <p class="player__text">
+                  Чемпион мира по шахматам
+                </p>
+                <button class="button player__button">Подробнее</button>
+              </div>
+            </blockquote>
+
+            <blockquote class="players__item slider__item">
+              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+              <div class="reviews__author-info">
+                <cite class="player__author-name">
+                  Арон Нимцович
+                </cite>
+                <p class="player__text">
+                  Чемпион мира по шахматам
+                </p>
+                <button class="button player__button">Подробнее</button>
+              </div>
+            </blockquote>
+
+            <blockquote class="players__item slider__item">
+              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+              <div class="reviews__author-info">
+                <cite class="player__author-name">
+                  Рихард Рети
+                </cite>
+                <p class="player__text">
+                  Чемпион мира по шахматам
+                </p>
+                <button class="button player__button">Подробнее</button>
+              </div>
+            </blockquote>
+
+            <blockquote class="players__item slider__item">
+              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+              <div class="reviews__author-info">
+                <cite class="player__author-name">
+                  Остап Бендер
+                </cite>
+                <p class="player__text">
+                  Гроссмейстер
+                </p>
+                <button class="button player__button">Подробнее</button>
+              </div>
+            </blockquote>
 
           </div>
+
+
           <nav class="stages__nav">
             <button class="button stages--left">
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,12 +276,9 @@
                 </svg>
 
             </button>
-            <p class="stages__toggles slider__toggles">
-              <button class="slider__toggele slider__toggele--current" type="button"></button>
-              <button class="slider__toggele" type="button"></button>
-              <button class="slider__toggele" type="button"></button>
-              <button class="slider__toggele" type="button"></button>
-              <button class="slider__toggele" type="button"></button>
+
+            <p class="player__toggles">
+              1/6
             </p>
 
             <button class="button stages--left slider__toggele--current">

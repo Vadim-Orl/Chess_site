@@ -1,18 +1,18 @@
 
-@import "block/normalize.scss";
-// @import "block/fonts.scss";
-@import "block/mixins.scss";
-@import "block/variables.scss";
+@import "block/helpers/normalize.scss";
+@import "block/helpers/mixins.scss";
+@import "block/helpers/variables.scss";
+@import "block/helpers/repead.scss";
 
 
-@import "block/main.scss";
+@import "block/main/main.scss";
 
+@import "block/footer/footer.scss";
 @import "block/page-body.scss";
-@import "block/header.scss";
-@import "block/support.scss";
-@import "block/stages.scss";
-@import "block/players.scss";
-@import "block/footer.scss";
+@import "block/header/header.scss";
+@import "block/main/support.scss";
+@import "block/main/stages.scss";
+@import "block/main/players.scss";
 
 
 

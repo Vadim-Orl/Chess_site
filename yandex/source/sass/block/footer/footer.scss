@@ -8,6 +8,7 @@
   display: flex;
   align-items:center;
   background-color: $special_red;
+  text-transform: uppercase;
   height: 38px;
   margin-bottom: 40px;
 }
@@ -20,20 +21,11 @@
 .footer__line__list {
 
   display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-content: center;
   flex-wrap: nowrap;
 
-  // width: 100%;
-  // height: 38px;
 
   margin-top: auto;
   margin-bottom: 40px;
-  // margin-left: -$padding-mobile;
-  // margin-right: -$padding-mobile;
-
-  // text-align: center;
 
   @include Merriweather--400;
   font-size: 16px;
@@ -55,8 +47,11 @@
 }
 
 .footer__text {
-  @include GolosText--500;
+  @include GolosText--400;
   font-size: 16px;
   margin-left: $padding-mobile;
   margin-right: $padding-mobile;
+
+  line-height: 19px;
+  letter-spacing: 0px;
 }

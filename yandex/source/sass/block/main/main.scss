@@ -13,6 +13,11 @@
   position: relative;
   color: $basic_dark-grey;
   background-color: $basic_white;
+
+  @media (min-width: $desktop-width){
+    background-color: inherit;
+    border: solid 2px $basic_dark-grey;
+  }
 }
 
 .button--grey {
@@ -24,12 +29,14 @@
 .page-main {
   margin-top: 48px;
   padding: 0 $padding-mobile;
+
+  @media (min-width: $desktop-width){
+    margin-top: 65px;
+    padding: 0 $margin-desktop;
+  }
 }
 
-// img {
-//   // width: 100%;
-//   // height: 100%;
-// }
+
 .span-right {
   display: block;
   text-align: right;
@@ -39,6 +46,7 @@
 }
 .span--crossed {
   text-decoration: line-through $special_red;
+  margin-right: 4px;
 }
 
 .text--blue {
@@ -46,8 +54,30 @@
 
   font-size: 18px;
   color: $special_blue;
+
+  @media (min-width: $desktop-width){
+    font-size: 20px;
+  }
 }
 
 .display-none {
+  display: none;
+}
+
+.span__red {
+  color: $special_red;
+  font-weight: 700;
+  // @include Merriweather--400--bold;
+}
+
+@media (min-width: $desktop-width){
+  .br--mobile {
+    display: none;
+  }
+  .br--desc {
+    display: block;
+  }
+}
+.br--desc {
   display: none;
 }
