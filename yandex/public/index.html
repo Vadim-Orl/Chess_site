@@ -127,23 +127,23 @@
         </div>
 
         <picture class="stages__img">
-          <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />
-          <source srcset="img/logo-tablet.svg" media="(min-width: 1200px)" /> -->
+          <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />-->
+          <source srcset="img/Plant--desc.png" media="(min-width: 1200px)" />
           <img src="img/plane.png"  alt="">
         </picture>
 
         <div class="stages__list">
           <div class="stages__list--wrapper">
-            <div class="stages_block">
-              <p class="stages__item"><span>1</span>Строительство железнодорожной магистрали Москва-Васюки</p>
-              <p class="stages__item "><span>2</span>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
+            <div class="stages_block stages_block--smoll">
+              <p class="stages__item stages__item--smoll"><span>1</span>Строительство железнодорожной магистрали Москва-Васюки</p>
+              <p class="stages__item stages__item--smoll"><span>2</span>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
             </div>
             <div class="stages_block">
               <p class="stages__item"><span>3</span>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
             </div>
-            <div class="stages_block">
-              <p class="stages__item"><span>4</span>Строительство дворца для турнира</p>
-              <p class="stages__item"><span>5</span>Размещение гаражей для гостевого автотранспорта</p>
+            <div class="stages_block stages_block--smoll">
+              <p class="stages__item stages__item--smoll"><span>4</span>Строительство дворца для турнира</p>
+              <p class="stages__item stages__item--smoll"><span>5</span>Размещение гаражей для гостевого автотранспорта</p>
             </div>
             <div class="stages_block">
               <p class="stages__item"><span>6</span>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
@@ -189,7 +189,13 @@
 
 
             <blockquote class="players__item slider__item">
-              <img src="img/player.png" width="50" height="33" alt="Фото Трэвиса Баркера" class="players__author-image">
+
+              <picture  class="players__author-image">
+                <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" />-->
+                <source srcset="img/player--desc.png" width="320" media="(min-width: 1200px)" />
+                <img src="img/player.png" alt="Фото Игрока">
+              </picture>
+
               <div class="reviews__author-info">
                 <cite class="player__author-name">
                   Хозе-Рауль Капабланка
@@ -294,19 +300,19 @@
     </main>
 
     <footer class="footer">
-      <marquee class="footer__line">
-      <div class="footer__line__wrapper">
+      <marquee class="line--run footer__line">
+        <div class="footer__line__wrapper ">
 
-          <ul class="footer__line__list">
-            <li class="list__item-red-line">Дело помощи утопающим — дело рук самих утопающих!</li>
-            <li class="list__item-red-line">Шахматы двигают вперёд не только культуру, но и экономику!</li>
-            <li class="list__item-red-line">Лёд тронулся, господа присяжные заседатели!</li>
-          </ul>
+            <ul class="footer__line__list">
+              <li class="list__item-red-line">Дело помощи утопающим — дело рук самих утопающих!</li>
+              <li class="list__item-red-line">Шахматы двигают вперёд не только культуру, но и экономику!</li>
+              <li class="list__item-red-line">Лёд тронулся, господа присяжные заседатели!</li>
+            </ul>
         </div>
       </marquee>
-        <p class="footer__text">
-          Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
-        </p>
+      <p class="footer__text">
+        Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+      </p>
 
 
     </footer>
