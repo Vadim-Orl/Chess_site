@@ -62,4 +62,9 @@
     margin-right: $margin-desktop;
   }
 
+  @media (min-width: $desktop-width-big){
+    margin-left: $margin-desktop-big;
+    margin-right: $margin-desktop-big;
+  }
+
 }

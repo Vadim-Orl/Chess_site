@@ -34,6 +34,10 @@
     margin-top: 65px;
     padding: 0 $margin-desktop;
   }
+
+  @media (min-width: $desktop-width-big){
+    padding: 0 $margin-desktop-big;
+  }
 }
 
 
