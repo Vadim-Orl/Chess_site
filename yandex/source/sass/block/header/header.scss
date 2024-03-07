@@ -6,20 +6,26 @@
 
   // background-blend-mode: multiply;
   background-image: url('../../img/Chess.png');
-
+  background-size:cover;
   // background-position: 76% 92%;
   background-position: 25%;
+
   // background-size: 1000px ;
   background-repeat:no-repeat;
   background-color: #E9DED4;
   // background-color: red;
 
 
-  @media (min-width: $mobile-size) and (max-width: $mobile-width-only){
+  @media (min-width: $mobile-size) and (max-width: $tablet-width-only){
     padding: 18px $padding-mobile;
     height: 812px;
 
   }
+
+  @media (min-width: $tablet-width) and (max-width: $tablet-width-only){
+    background-position: 10%;
+  }
+
   @media (min-width: $desktop-width){
     padding: 18px $margin-desktop 0;
     height: 760px;
@@ -97,6 +103,9 @@
   line-height: 39.6px;
   font-weight: 400;
   margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
 
   @media (min-width: $desktop-width){
     font-size: 60px;
@@ -141,10 +150,17 @@
 }
 
 .header__nav {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
     margin-top: 32px;
+    // margin-left: auto;
+    // margin-right: auto;
 
     @media (min-width: $desktop-width){
-      display: flex;
+      flex-direction: row;
       width: 542;
       justify-content: space-between;
     }

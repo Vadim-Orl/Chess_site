@@ -67,10 +67,15 @@
 //----------------------------------------------galetey-------------
 
 .stages__list {
+  width: 335px;
+
   margin: 0;
+  @include margin-center;
   overflow: hidden;
 
   @media (min-width: $desktop-width){
+    width: 1240px;
+
     overflow: auto;
   }
 }
@@ -80,14 +85,17 @@
   overflow: hidden;
   flex-wrap: nowrap;
 
-  min-width: 1775px;
   min-height: 300px;
   margin-bottom: 28px;
   transform: translateX(0px);
 
+  @media (min-width: $mobile-size) and (max-width: $tablet-width-only){
+    min-width: 1775px;
+  }
+
   @media (min-width: $desktop-width){
+    // min-width: none;
     display: grid;
-    min-width: 1200px;
     grid-template-columns: 400px 400px 400px;
     // grid-template-rows: 112px 112px 112px ;
     // grid-template-rows: 1fr 1fr 1fr;
@@ -285,7 +293,7 @@
       height: 44px;
     }
   }
-  
+
   @media (min-width: $desktop-width){
     display: none;
   }
