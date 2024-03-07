@@ -67,15 +67,20 @@
 //----------------------------------------------galetey-------------
 
 .stages__list {
-  width: 335px;
-
+  position: relative;
   margin: 0;
   @include margin-center;
   overflow: hidden;
 
-  @media (min-width: $desktop-width){
-    width: 1240px;
+  @media (min-width: $mobile-size) and (max-width: $tablet-width-only){
+    width: 335px;
 
+  }
+
+  @media (min-width: $desktop-width){
+    // width: 1240px;
+    // min-height: 394px;
+    max-width: 1240px;
     overflow: auto;
   }
 }
@@ -96,9 +101,9 @@
   @media (min-width: $desktop-width){
     // min-width: none;
     display: grid;
-    grid-template-columns: 400px 400px 400px;
+    // grid-template-columns: 400px 400px 400px;
     // grid-template-rows: 112px 112px 112px ;
-    // grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     margin: 0 auto;
 
@@ -111,13 +116,18 @@
 .stages__img{
   position: absolute;
   z-index: 100;
-  top: 190px;
-  left: 0px;
+  // top: 190px;
+  // left: 0px;
   // display: none;
   @media (min-width: $desktop-width){
-    top: 345px;
-    left: 888px;
+    // top: 345px;
+    bottom: 30px;
+    right: 1px;;
+    // right: 1px;
   }
+  // @media (min-width: $desktop-width-medium){
+  //   top: 160px;
+  // }
 }
 
 
@@ -155,7 +165,7 @@
     &:nth-child(2) {
       // row-gap: span 1/4;
       background-color:aqua;
-  background-image: url('../../img/stages_bg.png');
+  // background-image: url('../../img/stages_bg.png');
 
       // grid-column: 3/4;
       // grid-row: 1/3;
@@ -179,8 +189,8 @@
     }
 
     &:nth-child(5) {
-      background-color:rgb(255, 242, 0);
-  // background-image: url('../../img/stages_bg.png');
+      // background-color:rgb(255, 242, 0);
+  background-image: url('../../img/stages_bg.png');
       padding-right: 350px;
       // grid-column: 1/3
       grid-row: 3/4;
@@ -241,9 +251,10 @@
 .stages_block--smoll {
   @media (min-width: $desktop-width){
     // width: 820px;
-    width: 210%;
-    height: 112px;
-
+    // width: 210%;
+    // height: 112px;
+    grid-column: span 2/3;
+    // grid-row: span 1/3;
 
   }
 
@@ -257,12 +268,12 @@
     background-image: url('../../img/stages_bg.png');
 
     // height: 200px;
-    width: 400px;
+    // width: 600px;
+    // width: 200%;
     margin: 0;
     padding: 0;
 
-    grid-column: span 2/3;
-    grid-row: span 1/3;
+
 
     padding: 20px 40px 20px 72px;
 
