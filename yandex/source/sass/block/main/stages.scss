@@ -1,9 +1,9 @@
 .stages {
   position: relative;
-  margin-bottom: 118px;
+  margin-bottom: 115px;
 
   @media (min-width: $desktop-width){
-    margin-bottom: 190px;
+    margin-bottom: 201px;
   }
 }
 
@@ -77,11 +77,15 @@
   }
 
   @media (min-width: $desktop-width){
-    position: relative;
+    // position: relative;
     // width: 1240px;
     // min-height: 394px;
+    // width: 100%;
     max-width: 1240px;
     overflow: auto;
+    // margin-left: -20px;
+    // margin-right: -20px;
+    // padding: 130px;
   }
 }
 
@@ -99,6 +103,8 @@
   }
 
   @media (min-width: $desktop-width){
+    // position: relative;
+
     // min-width: none;
     display: grid;
     // grid-template-columns: 400px 400px 400px;
@@ -119,13 +125,16 @@
   // bottom: 60px;
   // left: 0px;
   @media (min-width: $mobile-size) and (max-width: $tablet-width-only){
-    top: 92px;
+    // top: 190px;
+    bottom: 306px;
   }
   // display: none;
   @media (min-width: $desktop-width){
     // top: 345px;
-    bottom: 30px;
-    right: 1px;;
+    bottom: -10px;
+    right: -48px;
+    // left: 870px;
+
     // right: 1px;
   }
   // @media (min-width: $desktop-width-medium){
@@ -228,7 +237,7 @@
     width: 36px;
     height: 36px;
 
-    left: -55px;
+    left: -52px;
     top: 0;
     background-color: $basic_white;
     border-radius: 100%;

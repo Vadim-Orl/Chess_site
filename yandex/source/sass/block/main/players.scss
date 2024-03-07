@@ -32,11 +32,17 @@
 
 .players__list {
   // margin: 0 20px;
+  @include margin-center;
+  width: 335px;
   overflow: hidden;
-
+  // background-color:red;
   @media (min-width: $desktop-width){
-    width: 1200px;
+    width: 1100px;
     // margin: 0 $margin-desktop;
+  }
+
+  @media (min-width: $desktop-width-medium){
+    width: 1200px;
 
   }
 }
@@ -86,7 +92,7 @@
   width: 244px;
   height: 244px;
 
-  @media (min-width: $desktop-width){
+  @media (min-width: $desktop-width-medium){
     margin-bottom: 28px;
     margin: 0;
     width: 320px;
@@ -122,6 +128,8 @@
 }
 
 .player__text {
+  @include GolosText--400;
+
   // font-size: 20px;
   // transform: translateX(10px);
   display: block;
@@ -131,8 +139,8 @@
   margin: 0 auto;
   font-size: 20px;
   font-weight: 400;
-
-  margin-bottom: 14px;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
 

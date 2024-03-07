@@ -8,7 +8,7 @@
   background-image: url('../../img/Chess.png');
   background-size:cover;
   // background-position: 76% 92%;
-  background-position: 25%;
+  background-position: 26%;
 
   // background-size: 1000px ;
   background-repeat:no-repeat;
@@ -28,19 +28,20 @@
 
   @media (min-width: $desktop-width){
     padding: 18px $margin-desktop 0;
-    height: 760px;
+    height: 750px;
     background-image: url('../../img/bg-copy.jpg');
-    // background-size: cover;
+    // background-size:contain;
+    background-size: auto;
     // background-size:contain;
     // background-position: 1% 15%;
     // background-position: center;
     // background-position: 2px 2px;
   // background-position: 0 60px;
     // background-position: -400px 60px;
-    background-position: 50% -5px;
+    background-position: 50% -4px;
 
 
-    // margin-bottom: 80px;
+    margin-bottom: 80px;
     // height: 812px;
     // margin: 0 -$margin-desktop;
     // padding: 0 $margin-desktop;
