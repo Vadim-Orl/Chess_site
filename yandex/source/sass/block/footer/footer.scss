@@ -29,8 +29,8 @@
   margin-top: auto;
   margin-bottom: 40px;
 
-  @include Merriweather--400;
-  font-size: 16px;
+  // @include Merriweather--400;
+  // font-size: 16px;
   color: $basic_white;
 }
 
@@ -60,7 +60,6 @@
   @media (min-width: $desktop-width){
     margin-left: $margin-desktop;
     margin-right: $margin-desktop;
-    // font-size: 24px;
   }
 
   @media (min-width: $desktop-width-big){
