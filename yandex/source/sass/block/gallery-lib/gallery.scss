@@ -1,0 +1,29 @@
+.gallery {
+  user-select: none;
+}
+
+.gallery-line {
+  touch-action: none;
+  /* transition: all 0.25s ease 0s; */
+}
+
+.gallery-slide {
+  transform: translateZ(0);
+}
+
+.navigation__button--right {
+  background-color: D9D9D9;
+}
+
+.navigation__button--right {
+  background-color: D9D9D9;
+}
+
+.slider__toggle {
+  background-color:D9D9D9;
+}
+
+
+.slider__toggle--current {
+  background-color: $special_dark-grey2;
+}

@@ -22,7 +22,7 @@ const js = ()=> {
       }))
     }))
     .pipe(babel())
-    .pipe(webpack(app.webpack))
+    // .pipe(webpack(app.webpack))
     .pipe(dest(path.js.dest, {sourcemaps: app.isDev}));
 };
 

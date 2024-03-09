@@ -29,7 +29,7 @@
 
         <div class="header__nav">
           <button type="button" class="button button--grey  header__button">Поддержать шахматную мысль</button>
-          <button type="button" class="button button--white header__button">Подробнее о турнире</button>
+          <button type="button" class="button button--white header__button">Подробнее о турнире</button>
         </div>
 
       </content>
@@ -130,7 +130,7 @@
 
 
 
-         <div class="stages__list">
+         <div class="stages__list gallery" id="gallery-1">
 
           <picture class="stages__img">
             <!-- <source srcset="img/logo-desktop.svg" media="(min-width: 768px)" /> -->
@@ -138,44 +138,43 @@
             <img src="img/plane.png"  alt="">
           </picture>
 
-          <div class="stages__list--wrapper">
-            <div class="stages_block stages_block--smoll">
+          <div class="stages__list--wrapper gallery-line">
+            <div class="stages_block stages_block--smoll gallery-slide">
               <p class="stages__item stages__item--smoll"><span>1</span>Строительство железнодорожной магистрали Москва-Васюки</p>
               <p class="stages__item stages__item--smoll"><span>2</span>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
             </div>
             <div class="stages_block">
               <p class="stages__item"><span>3</span>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
             </div>
-            <div class="stages_block stages_block--smoll">
+            <div class="stages_block stages_block--smoll gallery-slide">
               <p class="stages__item stages__item--smoll"><span>4</span>Строительство дворца для турнира</p>
               <p class="stages__item stages__item--smoll"><span>5</span>Размещение гаражей для гостевого автотранспорта</p>
             </div>
-            <div class="stages_block">
+            <div class="stages_block gallery-slide">
               <p class="stages__item"><span>6</span>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
             </div>
-            <div class="stages_block">
+            <div class="stages_block gallery-slide">
               <p class="stages__item"><span>7</span>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
             </div>
 
           </div>
         </div>
 
-        <nav class="stages__nav">
-          <button class="button stages--left">
+        <nav class="stages__nav" id="gallery-1-nav">
+          <button class="button navigation__button--left">
             <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.07664 15.9229L1.15357 8.99978L8.07664 2.0767" stroke="white" stroke-width="1.63636" stroke-linecap="square"/>
-              </svg>
+            </svg>
 
           </button>
           <p class="stages__toggles slider__toggles">
-            <button class="slider__toggele slider__toggele--current" type="button"></button>
-            <button class="slider__toggele" type="button"></button>
-            <button class="slider__toggele" type="button"></button>
-            <button class="slider__toggele" type="button"></button>
-            <button class="slider__toggele" type="button"></button>
+            <button class="slider__toggle slider__toggle--current" type="button"></button>
+            <button class="slider__toggle" type="button"></button>
+            <button class="slider__toggle" type="button"></button>
+            <button class="slider__toggle" type="button"></button>
           </p>
 
-          <button class="button stages--left slider__toggele--current">
+          <button class="button navigation__button--right slider__toggle--current">
             <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.92336 2.07715L8.84644 9.00022L1.92336 15.9233" stroke="white" stroke-width="1.63636" stroke-linecap="square"/>
               </svg>
@@ -318,5 +317,7 @@
 
 
     </footer>
+
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>
