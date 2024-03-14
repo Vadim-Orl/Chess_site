@@ -28,8 +28,8 @@ export default class Gallary {
         }
 
         this.checkDocWidth = this.checkDocWidth.bind(this);
-        this.manageHTML = this.manageHTML.bind(this);
-        this.manageNavHTML = this.manageNavHTML.bind(this);
+        this.manageGallery = this.manageGallery.bind(this);
+        this.manageNav = this.manageNav.bind(this);
 
         this.setParameters = this.setParameters.bind(this);
         this.setEvents = this.setEvents.bind(this);
@@ -52,11 +52,13 @@ export default class Gallary {
         this.changeStyleBtn = this.changeStyleBtn.bind(this);
 
 
-        this.manageHTML();
-        this.settings.hasToggle && this.manageNavHTML()
+        this.manageGallery();
+        this.settings.hasToggle && this.manageNav()
+
         this.setParameters();
         this.setEvents();
-        this.settings.hasTimer && this.startTimer();
+
+        this.checkDocWidth() && this.settings.hasTimer && this.startTimer();
 
     }
 
@@ -65,25 +67,22 @@ export default class Gallary {
       // debugger
       if (window.innerWidth > this.settings.breakpoints.starting &&
         window.innerWidth < this.settings.breakpoints.ending) {
-            console.log('true -1 ')
           return true;
         }
         else {
-        console.log('false -1 ')
-
           return false;
         }
     }
 
 
-    manageHTML() {
+    manageGallery() {
         this.lineNode = this.containerNode.querySelector(`.${GallaryLineClassName}`);
 
         this.slideNodes = Array.from(this.lineNode.querySelectorAll(`${GallerySlideClassName}`))
 
     }
 
-    manageNavHTML() {
+    manageNav() {
         console.log(this.navigateNode)
         this.navLeftButton = this.navigateNode.querySelector(`.${NavBtnLeftClassName}`);
         this.navRightButton = this.navigateNode.querySelector(`.${NavBtnRightClassName}`);
