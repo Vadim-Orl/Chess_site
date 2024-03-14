@@ -18,10 +18,10 @@ export default class Gallary {
         this.currentSlide = 0;
         this.countSlides = element.querySelectorAll(`.${GallerySlideClassName}`).length;
         this.firstSlide = element.querySelectorAll(`.${GallerySlideClassName}`)[0];
-
+        console.log('nnnnnnnnnnnnnnewwwwwwwwwwwwwwwwwwwww')
         this.currentSlideWasChange = false;
         this.settings = {
-            margin: options.margin || 0,
+            margin: options.margin,
             hasTimer: options.hasTimer || false,
             hasToggleText: options.hasToggleText,
             hasToggle: options.hasToggle,
@@ -43,8 +43,11 @@ export default class Gallary {
 
         this.setStylePosition = this.setStylePosition.bind(this);
         this.changeCurrentSlide =  this.changeCurrentSlide.bind(this);
+
         this.nextSlide = this.nextSlide.bind(this);
         this.startTimer = this.startTimer.bind(this);
+        this.stopTimer = this.stopTimer.bind(this);
+
         this.destroyEvents = this.destroyEvents.bind(this);
 
         this.goToRightSlide = this.goToRightSlide.bind(this);
@@ -115,6 +118,10 @@ export default class Gallary {
         this.x = -this.currentSlide * (this.width + this.settings.margin)
 
         this.setStylePosition();
+
+        this.settings.hasToggle && this.changeToggles();
+        this.settings.hasToggleText && this.changeToggleText();
+        this.settings.isSliderNotRound && this.changeStyleBtn();
     }
 
     setEvents() {
@@ -149,11 +156,15 @@ export default class Gallary {
     }
 
     resizeGallery() {
+      // this.settings.hasTimer && this.startTimer();
 
       console.log('resize')
       this.currentSlide = 0;
       // this.setParameters();
-
+      console.log(this.checkDocWidth() + '   -------------')
+      console.log(this.settings.hasTimer + '   -------------')
+      console.log(this.settings.breakpoints + '   -------------')
+      console.dir(this)
       if (this.checkDocWidth()) {
         this.settings.hasTimer && this.stopTimer();
         this.settings.hasTimer && this.startTimer();
@@ -162,9 +173,7 @@ export default class Gallary {
         // this.setNewWidth
         this.setParameters();
         this.setEvents();
-        this.settings.hasToggle && this.changeToggles();
-        this.settings.hasToggleText && this.changeToggleText();
-        this.changeStyleBtn();
+
 
       } else {
           console.log('resize')
@@ -192,8 +201,8 @@ export default class Gallary {
         console.log('stop')
 
         this.nextSlide()
-        this.settings.hasToggle && this.changeToggles();
-        this.settings.isSliderNotRound && this.changeStyleBtn();
+        // this.settings.hasToggle && this.changeToggles();
+        // this.settings.isSliderNotRound && this.changeStyleBtn();
     }
 
     changeCurrentSlide(nexSlide) {
@@ -224,9 +233,9 @@ export default class Gallary {
       this.x = -(this.currentSlide) * (this.width + this.settings.margin);
       this.setStyleTransition();
       this.setStylePosition();
-      // this.setParameters();
+      this.setParameters();
 
-      this.settings.hasToggleText && this.changeToggleText();
+      // this.settings.hasToggleText && this.changeToggleText();
       this.settings.hasTimer && this.startTimer();
     }
 
@@ -256,8 +265,8 @@ export default class Gallary {
         evt.preventDefault();
         this.changeCurrentSlide();
         this.nextSlide();
-        this.settings.hasToggle && this.changeToggles();
-        this.settings.isSliderNotRound && this.changeStyleBtn();
+        // this.settings.hasToggle && this.changeToggles();
+        // this.settings.isSliderNotRound && this.changeStyleBtn();
 
     }
 
@@ -266,8 +275,8 @@ export default class Gallary {
         this.changeCurrentSlide(-1);
         this.nextSlide();
 
-        this.settings.hasToggle && this.changeToggles();
-        this.settings.isSliderNotRound && this.changeStyleBtn();
+        // this.settings.hasToggle && this.changeToggles();
+        // this.settings.isSliderNotRound && this.changeStyleBtn();
 
         console.log('prev')
 
@@ -281,8 +290,8 @@ export default class Gallary {
 
         this.nextSlide();
 
-        this.settings.hasToggle && this.changeToggles();
-        this.settings.isSliderNotRound && this.changeStyleBtn();
+        // this.settings.hasToggle && this.changeToggles();
+        // this.settings.isSliderNotRound && this.changeStyleBtn();
 
     }
 
@@ -336,6 +345,7 @@ export default class Gallary {
     }
 
     startTimer() {
+      console.log('start timer')
           this.timer = setInterval(()=> {
           this.changeCurrentSlide();
 
@@ -346,6 +356,8 @@ export default class Gallary {
     }
 
     stopTimer() {
+      console.log('stop timer')
+
         clearInterval(this.timer);
     }
 }

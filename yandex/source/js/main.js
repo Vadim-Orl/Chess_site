@@ -11,9 +11,9 @@ import Gallary from "./gallery-lib/gallery"
 // function runGallety1() {
   // if(window.innerWidth < 1200) {
 
-    const t = new Gallary(document.getElementById('gallery-1'), document.getElementById('gallery-1-nav'), {
+  const t = new Gallary(document.getElementById('gallery-1'), document.getElementById('gallery-1-nav'), {
       margin: 20,
-      hasTimer: false,
+      hasTimer: true,
       hasToggle: true,
       hasToggleText: false,
       isSliderNotRound: true,
