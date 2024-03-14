@@ -6,6 +6,7 @@ const NavClassName = 'navigation';
 const NavBtnLeftClassName = 'navigation__button--left';
 const NavBtnRightClassName = 'navigation__button--right';
 // const NavLeftButtonClassName =
+const NavigateToggleTextClassName = 'navigattion__toggle-text'
 const NavigateTogglesClassName = 'slider__toggles'
 const NavCurrentToggleClassName = 'slider__toggle--current'
 const DataAtributToggle = 'data-slide-num'
@@ -15,7 +16,8 @@ export default class Gallary {
         this.containerNode = element;
         this.navigateNode = navigate;
         this.currentSlide = 0;
-        this.size = element.querySelectorAll(`.${GallerySlideClassName}`).length;
+        this.countSlides = element.querySelectorAll(`.${GallerySlideClassName}`).length;
+        this.firstSlide = element.querySelectorAll(`.${GallerySlideClassName}`)[0];
 
         this.currentSlideWasChange = false;
         this.settings = {
@@ -24,7 +26,7 @@ export default class Gallary {
             hasToggleText: options.hasToggleText,
             hasToggle: options.hasToggle,
             isSliderNotRound: options.isSliderNotRound,
-            breakpoints: options.breakpoints,
+            breakpoints: options.breakpoints || false,
         }
 
         this.checkDocWidth = this.checkDocWidth.bind(this);
@@ -49,11 +51,12 @@ export default class Gallary {
         this.goToLeftSlide = this.goToLeftSlide.bind(this);
         this.goToCurrentSlide = this.goToCurrentSlide.bind(this);
         this.changeToggles = this.changeToggles.bind(this);
+        this.changeToggleText = this.changeToggleText.bind(this);
         this.changeStyleBtn = this.changeStyleBtn.bind(this);
 
 
         this.manageGallery();
-        this.settings.hasToggle && this.manageNav()
+        this.manageNav();
 
         this.setParameters();
         this.setEvents();
@@ -64,7 +67,10 @@ export default class Gallary {
 
 
     checkDocWidth() {
-      // debugger
+      if (!this.settings.breakpoints) {
+        return true;
+      }
+
       if (window.innerWidth > this.settings.breakpoints.starting &&
         window.innerWidth < this.settings.breakpoints.ending) {
           return true;
@@ -77,27 +83,37 @@ export default class Gallary {
 
     manageGallery() {
         this.lineNode = this.containerNode.querySelector(`.${GallaryLineClassName}`);
-
         this.slideNodes = Array.from(this.lineNode.querySelectorAll(`${GallerySlideClassName}`))
-
     }
 
     manageNav() {
+      // debugger
         console.log(this.navigateNode)
         this.navLeftButton = this.navigateNode.querySelector(`.${NavBtnLeftClassName}`);
         this.navRightButton = this.navigateNode.querySelector(`.${NavBtnRightClassName}`);
         this.navToggles = this.navigateNode.querySelector(`.${NavigateTogglesClassName}`);
 
-        this.toggleNodes = Array.from(this.navToggles.children);
-        this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index+1)))
+        if (this.settings.hasToggle) {
+          this.toggleNodes = Array.from(this.navToggles.children);
+          this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index+1)))
+        }
+
+        if (this.settings.hasToggleText) {
+          this.toggleText = this.navigateNode.querySelector(`.${NavigateToggleTextClassName}`);
+        }
 
     }
 
     setParameters() {
         const coordsContainer = this.containerNode.getBoundingClientRect();
         this.width = coordsContainer.width;
-        this.maximumX = -(this.size - 1) * (this.width  + this.settings.margin)
+
+        this.counSlideInLine = Math.floor(this.width / this.firstSlide.clientWidth);
+        this.size = Math.floor(this.countSlides / this.counSlideInLine);
+
+        this.maximumX = -(this.size - 1) * (this.width  + this.settings.margin);
         this.x = -this.currentSlide * (this.width + this.settings.margin)
+
         this.setStylePosition();
     }
 
@@ -135,21 +151,25 @@ export default class Gallary {
     resizeGallery() {
 
       console.log('resize')
+      this.currentSlide = 0;
+      // this.setParameters();
 
       if (this.checkDocWidth()) {
         this.settings.hasTimer && this.stopTimer();
-
         this.settings.hasTimer && this.startTimer();
 
-        this.setStyleTransition()
+        this.setStyleTransition();
+        // this.setNewWidth
         this.setParameters();
         this.setEvents();
-        this.changeToggles();
+        this.settings.hasToggle && this.changeToggles();
+        this.settings.hasToggleText && this.changeToggleText();
+        this.changeStyleBtn();
+
       } else {
           console.log('resize')
           this.settings.hasTimer && this.stopTimer();
           this.resetStyleTransition();
-          this.currentSlide = 0;
           this.setParameters();
           this.destroyEvents()
         }
@@ -204,6 +224,9 @@ export default class Gallary {
       this.x = -(this.currentSlide) * (this.width + this.settings.margin);
       this.setStyleTransition();
       this.setStylePosition();
+      // this.setParameters();
+
+      this.settings.hasToggleText && this.changeToggleText();
       this.settings.hasTimer && this.startTimer();
     }
 
@@ -261,6 +284,10 @@ export default class Gallary {
         this.settings.hasToggle && this.changeToggles();
         this.settings.isSliderNotRound && this.changeStyleBtn();
 
+    }
+
+    changeToggleText() {
+      this.toggleText.innerText = `${this.currentSlide + 1}/${this.size}`
     }
 
     changeToggles() {
