@@ -55,4 +55,7 @@
 .button {
   border-radius: 66px;
   border: none;
+  &:disabled {
+    background-color: #D6D6D6;
+  }
 }
