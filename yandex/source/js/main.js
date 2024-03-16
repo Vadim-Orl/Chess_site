@@ -11,7 +11,7 @@ import Gallary from "./gallery-lib/gallery"
 // function runGallety1() {
   // if(window.innerWidth < 1200) {
 
-  const t = new Gallary(document.getElementById('gallery-1'), document.getElementById('gallery-1-nav'), {
+new Gallary(document.getElementById('gallery-1'), document.getElementById('gallery-1-nav'), {
       margin: 20,
       hasTimer: true,
       hasToggle: true,
@@ -20,7 +20,7 @@ import Gallary from "./gallery-lib/gallery"
       breakpoints: { starting: 375, ending: 1220 }
     })
 // }
-const t2 = new Gallary(document.getElementById('gallery-2'), document.getElementById('gallery-2-nav'), {
+new Gallary(document.getElementById('gallery-2'), document.getElementById('gallery-2-nav'), {
   margin: 20,
   hasTimer: false,
   hasToggle: false,
