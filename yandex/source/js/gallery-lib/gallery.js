@@ -146,8 +146,9 @@ export default class Gallary {
 
         if (this.counSlideInLine > 0) {
           this.size = Math.ceil(this.countSlides / this.counSlideInLine);
+          // debugger
 
-          this.maximumX = -(this.size - 1) * (this.size  + this.settings.margin);
+          this.maximumX = -(this.size - 1) * ((this.firstSlide.clientWidth * this.counSlideInLine)  + (this.settings.margin * this.counSlideInLine));
           this.x = -this.currentSlide * ((this.firstSlide.clientWidth * this.counSlideInLine)  + (this.settings.margin * this.counSlideInLine))
         }
 
@@ -194,7 +195,7 @@ export default class Gallary {
     }
 
     resizeGallery() {
-      debugger
+      // debugger
       // this.settings.hasTimer && this.startTimer();
       this.settings.hasTimer && this.isTimerGo &&  this.stopTimer();
 

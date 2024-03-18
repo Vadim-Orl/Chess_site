@@ -9,10 +9,10 @@ new Gallary(document.getElementById('gallery-1'), document.getElementById('galle
     breakpoints: { starting: 375, ending: 1220 }
   })
 
-// new Gallary(document.getElementById('gallery-2'), document.getElementById('gallery-2-nav'), {
-//   margin: 20,
-//   hasTimer: false,
-//   hasToggle: false,
-//   hasToggleText: true,
-//   isSliderNotRound: true,
-// })
+new Gallary(document.getElementById('gallery-2'), document.getElementById('gallery-2-nav'), {
+  margin: 20,
+  hasTimer: false,
+  hasToggle: false,
+  hasToggleText: true,
+  isSliderNotRound: true,
+})
