@@ -8,6 +8,7 @@ const NavBtnRightClassName = 'navigation__button--right';
 // const NavLeftButtonClassName =
 const NavigateToggleTextClassName = 'navigattion__toggle-text'
 const NavigateTogglesClassName = 'slider__toggles'
+const NavigateToggleClassName = 'slider__toggle'
 const NavCurrentToggleClassName = 'slider__toggle--current'
 const DataAtributToggle = 'data-slide-num'
 
@@ -18,7 +19,7 @@ export default class Gallary {
         this.currentSlide = 0;
         this.countSlides = element.querySelectorAll(`.${GallerySlideClassName}`).length;
         this.firstSlide = element.querySelectorAll(`.${GallerySlideClassName}`)[0];
-        console.log('nnnnnnnnnnnnnnewwwwwwwwwwwwwwwwwwwww')
+        // console.log('nnnnnnnnnnnnnnewwwwwwwwwwwwwwwwwwwww')
         this.currentSlideWasChange = false;
         this.settings = {
             margin: options.margin,
@@ -28,6 +29,7 @@ export default class Gallary {
             isSliderNotRound: options.isSliderNotRound,
             breakpoints: options.breakpoints || false,
         }
+        this.isTimerGo = false;
 
         this.checkDocWidth = this.checkDocWidth.bind(this);
         this.manageGallery = this.manageGallery.bind(this);
@@ -56,10 +58,13 @@ export default class Gallary {
         this.changeToggles = this.changeToggles.bind(this);
         this.changeToggleText = this.changeToggleText.bind(this);
         this.changeStyleBtn = this.changeStyleBtn.bind(this);
+        this.setWidthLine = this.setWidthLine.bind(this);
 
 
         this.manageGallery();
         this.manageNav();
+
+        // this.checkDocWidth() && this.setWidthLine()
 
         this.setParameters();
         this.setEvents();
@@ -87,18 +92,44 @@ export default class Gallary {
     manageGallery() {
         this.lineNode = this.containerNode.querySelector(`.${GallaryLineClassName}`);
         this.slideNodes = Array.from(this.lineNode.querySelectorAll(`${GallerySlideClassName}`))
+
+
+        // debugger
+    }
+
+    setWidthLine() {
+      // const widthSlide = this.slideNodes[0];
+      this.firstSlide = this.containerNode.querySelectorAll(`.${GallerySlideClassName}`)[0];
+
+      // if (this.counSlideInLine > 0) {
+        this.lineNode.style.width = `${this.countSlides * (this.firstSlide.clientWidth + this.settings.margin)}px`
+        // } else {
+        debugger
+      //   this.lineNode.style.width = `${this.containerNode.clientWidth}px`
+
+      // }
     }
 
     manageNav() {
       // debugger
-        console.log(this.navigateNode)
+        // console.log(this.navigateNode)
         this.navLeftButton = this.navigateNode.querySelector(`.${NavBtnLeftClassName}`);
         this.navRightButton = this.navigateNode.querySelector(`.${NavBtnRightClassName}`);
         this.navToggles = this.navigateNode.querySelector(`.${NavigateTogglesClassName}`);
 
         if (this.settings.hasToggle) {
+
+          // debugger
+          for (let i = 0; i < this.countSlides; i++) {
+            const newToggle = document.createElement('button');
+            newToggle.setAttribute('type', 'button');
+            newToggle.classList.add(`${NavigateToggleClassName}`);
+            this.navToggles.append(newToggle)
+          }
+
           this.toggleNodes = Array.from(this.navToggles.children);
-          this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index+1)))
+          this.toggleNodes[0].classList.add(`${NavCurrentToggleClassName}`)
+          this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index + 1)))
         }
 
         if (this.settings.hasToggleText) {
@@ -112,10 +143,15 @@ export default class Gallary {
         this.width = coordsContainer.width;
 
         this.counSlideInLine = Math.floor(this.width / this.firstSlide.clientWidth);
-        this.size = Math.floor(this.countSlides / this.counSlideInLine);
 
-        this.maximumX = -(this.size - 1) * (this.width  + this.settings.margin);
-        this.x = -this.currentSlide * (this.width + this.settings.margin)
+        if (this.counSlideInLine > 0) {
+          this.size = Math.ceil(this.countSlides / this.counSlideInLine);
+
+          this.maximumX = -(this.size - 1) * (this.size  + this.settings.margin);
+          this.x = -this.currentSlide * ((this.firstSlide.clientWidth * this.counSlideInLine)  + (this.settings.margin * this.counSlideInLine))
+        }
+
+        // debugger
 
         this.setStylePosition();
 
@@ -134,6 +170,8 @@ export default class Gallary {
         window.addEventListener('pointerup', this.stopDrag)
         window.addEventListener('pointercancel', this.stopDrag)
 
+        // this.debounceClickRightButton = debounce(this.goToRightSlide);
+        // this.debounceClickLeftButton = debounce(this.resizeGallery);
 
         this.navRightButton.addEventListener('click', this.goToRightSlide)
         this.navLeftButton.addEventListener('click', this.goToLeftSlide)
@@ -156,30 +194,29 @@ export default class Gallary {
     }
 
     resizeGallery() {
+      debugger
       // this.settings.hasTimer && this.startTimer();
+      this.settings.hasTimer && this.isTimerGo &&  this.stopTimer();
 
-      console.log('resize')
+      console.log('resize общий')
       this.currentSlide = 0;
-      // this.setParameters();
-      console.log(this.checkDocWidth() + '   -------------')
-      console.log(this.settings.hasTimer + '   -------------')
-      console.log(this.settings.breakpoints + '   -------------')
-      console.dir(this)
+
       if (this.checkDocWidth()) {
-        this.settings.hasTimer && this.stopTimer();
-        this.settings.hasTimer && this.startTimer();
+        // console.log('resize if')
 
         this.setStyleTransition();
-        // this.setNewWidth
         this.setParameters();
+
         this.setEvents();
+        this.settings.hasTimer && !this.isTimerGo && this.startTimer();
 
 
       } else {
-          console.log('resize')
-          this.settings.hasTimer && this.stopTimer();
+          console.log('resize else')
+          // this.lineNode.style.width = `${this.containerNode.clientWidth}px`
           this.resetStyleTransition();
-          this.setParameters();
+          this.x = 0;
+          this.setStylePosition();
           this.destroyEvents()
         }
     }
@@ -188,11 +225,11 @@ export default class Gallary {
         evt.preventDefault();
         console.log('start drag')
         this.currentSlideWasChange = false;
-        this.settings.hasTimer && this.stopTimer();
+        this.settings.hasTimer && this.isTimerGo && this.stopTimer();
 
         this.clickX = evt.pageX;
         this.startX = this.x
-        console.log(evt.pageX)
+        // console.log(evt.pageX)
         window.addEventListener('pointermove', this.dragging)
     }
 
@@ -229,14 +266,16 @@ export default class Gallary {
 
     nextSlide() {
 
-      this.settings.hasTimer && this.stopTimer();
-      this.x = -(this.currentSlide) * (this.width + this.settings.margin);
+      this.settings.hasTimer && this.isTimerGo && this.stopTimer();
+      // this.x = -(this.currentSlide) * (this.width + this.settings.margin);
+      this.x = -this.currentSlide * ((this.firstSlide.clientWidth * this.counSlideInLine)  + (this.settings.margin * this.counSlideInLine))
+      // debugger
       this.setStyleTransition();
       this.setStylePosition();
       this.setParameters();
 
       // this.settings.hasToggleText && this.changeToggleText();
-      this.settings.hasTimer && this.startTimer();
+      this.settings.hasTimer && !this.isTimerGo &&  this.startTimer();
     }
 
     dragging(evt) {
@@ -246,7 +285,7 @@ export default class Gallary {
         const dragShift = this.dragX - this.clickX;
         const easing = dragShift / 5;
         this.x = Math.max(Math.min(this.startX + dragShift, easing), this.maximumX + easing);
-        console.log(dragShift)
+        // console.log(dragShift)
         this.setStylePosition()
 
         //change active slide
@@ -306,8 +345,8 @@ export default class Gallary {
     }
 
     changeStyleBtn() {
-        console.log(this.currentSlide)
-        console.log(this.size)
+        // console.log(this.currentSlide)
+        // console.log(this.size)
 
         if (this.currentSlide === 0) {
             this.navLeftButton.classList.remove(`${NavCurrentToggleClassName}`)
@@ -345,25 +384,31 @@ export default class Gallary {
     }
 
     startTimer() {
-      console.log('start timer')
-          this.timer = setInterval(()=> {
-          this.changeCurrentSlide();
 
-          this.nextSlide();
-          this.changeToggles();
-          this.changeStyleBtn();
-        }, 3000);
+      console.log('start timer')
+      this.timer = setInterval(()=> {
+        this.changeCurrentSlide();
+
+        this.nextSlide();
+        this.changeToggles();
+        this.changeStyleBtn();
+      }, 3000);
+      this.isTimerGo = true;
+      console.log(this.isTimerGo)
+
     }
 
     stopTimer() {
+      this.isTimerGo = false;
       console.log('stop timer')
+      console.log(this.isTimerGo)
 
         clearInterval(this.timer);
     }
 }
 
 
-function debounce(func, time = 100) {
+function debounce(func, time = 200) {
     let timer;
     return function (event) {
         clearTimeout(timer);
