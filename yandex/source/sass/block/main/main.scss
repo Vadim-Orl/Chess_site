@@ -1,14 +1,4 @@
 
-
-
-
-
-.title {
-  // @include Merriweather--400;
-  // text-transform: uppercase;
-}
-
-
 .button--white {
   position: relative;
   color: $basic_dark-grey;
@@ -71,7 +61,6 @@
 .span__red {
   color: $special_red;
   font-weight: 700;
-  // @include Merriweather--400--bold;
 }
 
 @media (min-width: $desktop-width){
@@ -84,8 +73,4 @@
 }
 .br--desc {
   display: none;
-}
-
-img {
-  // display: block;
 }

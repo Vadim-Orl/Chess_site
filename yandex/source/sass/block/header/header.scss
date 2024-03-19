@@ -10,7 +10,7 @@ background-size:cover;
     position: absolute;
     content: "";
     background:
-    url('../../img/header-mask.png');
+    url('../../img/bg-hs.png');
 
     mix-blend-mode: multiply;
     left: 0;
@@ -36,44 +36,21 @@ background-size:cover;
     padding: 18px $margin-desktop 0;
     height: 750px;
     background:
-    url('../../img/bg-desc.png') 26% 0% no-repeat,
-    rgb(232, 221, 211),
-;
-    // background-image: url('../../img/bg-copy.jpg');
+      url('../../img/bg-desc.png') 26% 0% no-repeat,
+      rgb(232, 221, 211);
 
-    // background-size:contain;
     background-size: auto;
     background-position: 50% -4px;
 
-
     margin-bottom: 80px;
-    // height: 812px;
-    // margin: 0 -$margin-desktop;
-    // padding: 0 $margin-desktop;
-    // padding-top: 26px;
-    // padding-left: 72px;
   }
 
   @media (min-width: $desktop-width-big){
     padding-left: $margin-desktop-big;
     padding-right: $margin-desktop-big;
   }
-
-
-  // &::before {
-  //   content: '';
-  //   width: 100%;
-  //   height: 750px;
-  //   left: 0;
-  //   top: 10px;
-  //   position: absolute;
-  //   background-image: url('../../img/header-mask.png');
-  //   background-repeat: repeat;
-  //   background-position:center;
-  //   background-size:cover;
-  //   opacity: 0.1;
-  //  }
 }
+
 .page-header__logo {
   display: block;
   margin-bottom: 30px;
@@ -82,19 +59,10 @@ background-size:cover;
     margin-bottom: 52px;
   }
 }
-// .header__title {
-//   @media (min-width: $mobile-size) and (max-width: $desktop-width){
-//     margin: 40px;
-
-
-//   }
-// }
 
 .header__content {
-  // position: relative;
   display: block;
-  // margin: 0 auto;
-  // margin-top: 90px;
+
   @media (min-width: $desktop-width){
     width: 542px;
   }
@@ -116,7 +84,6 @@ background-size:cover;
   @media (min-width: $desktop-width){
     font-size: 60px;
     line-height: 66px;
-
   }
 
 
@@ -162,8 +129,6 @@ background-size:cover;
   justify-content: center;
   align-items: center;
     margin-top: 32px;
-    // margin-left: auto;
-    // margin-right: auto;
 
     @media (min-width: $desktop-width){
       flex-direction: row;
@@ -200,6 +165,5 @@ background-size:cover;
     bottom:0;
     left: 0;
     margin-bottom: 0;
-
 }
 

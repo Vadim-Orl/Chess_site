@@ -4,11 +4,9 @@
 
 .gallery-line {
   touch-action: none;
-  /* transition: all 0.25s ease 0s; */
 }
 
 .gallery-slide {
-  // transform: translateZ(0);
 }
 
 .navigation__button--right {
@@ -26,5 +24,4 @@
 
 .slider__toggle--current {
   background-color: $special_dark-grey2;
-  // disabled: true;
 }
