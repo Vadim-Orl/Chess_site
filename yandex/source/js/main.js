@@ -2,7 +2,7 @@ import Gallary from "./gallery-lib/gallery"
 
 new Gallary(document.getElementById('gallery-1'), document.getElementById('gallery-1-nav'), {
     margin: 20,
-    hasTimer: false,
+    hasTimer: true,
     hasToggle: true,
     hasToggleText: false,
     isSliderNotRound: true,

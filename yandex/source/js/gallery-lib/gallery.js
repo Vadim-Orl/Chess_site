@@ -112,6 +112,8 @@ export default class Gallary {
         if (this.settings.hasToggleText) {
           this.toggleText = this.navigateNode.querySelector(`.${NavigateToggleTextClassName}`);
         }
+
+        this.changeStyleBtn();
     }
 
     setSettingParameters() {
@@ -197,8 +199,6 @@ export default class Gallary {
 
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging);
-        console.log('stop')
-
         this.nextSlide()
     }
 
@@ -210,38 +210,39 @@ export default class Gallary {
       const easing = dragShift / 5;
       this.x = Math.max(Math.min(this.startX + dragShift, easing), this.maximumX + easing);
 
+      if (dragShift > 20 && dragShift > 0 && !this.currentSlideWasChange) {
+        this.currentSlideWasChange = true;
+        this.changeCurrentSlide(this.currentSlide - 1);
+      }
+
+      if (dragShift < -20 && dragShift < 0 && !this.currentSlideWasChange) {
+        this.currentSlideWasChange = true;
+        this.changeCurrentSlide(this.currentSlide + 1);
+      }
+
       this.setStylePosition()
-
-      if (dragShift > 20 && dragShift > 0 && !this.currentSlideWasChange && this.currentSlide > 0) {
-          this.currentSlideWasChange = true;
-          this.currentSlide = this.currentSlide - 1;
-      }
-
-      if (dragShift < -20 && dragShift < 0 && !this.currentSlideWasChange && this.currentSlide < this.countSliders - 1) {
-          this.currentSlideWasChange = true;
-          this.currentSlide = this.currentSlide + 1;
-      }
   }
 
     changeCurrentSlide(nextSlide) {
-      if (nextSlide > 0) {
-        this.currentSlide = nextSlide - 1;
-      } else {
         if (nextSlide < 0) {
-          if (this.currentSlide === 0) {
+              if (!this.settings.isSliderNotRound || this.settings.hasTimer) {
                 this.currentSlide = this.countSliders - 1;
-          } else {
-            this.currentSlide -= 1;
-          }
+                return;
+              } else {
+                return;
+              }
+        }
 
-        } else {
-            if (this.currentSlide === this.countSliders - 1) {
+        if (nextSlide > this.countSliders - 1){
+              if (!this.settings.isSliderNotRound || this.settings.hasTimer) {
                 this.currentSlide = 0;
-            } else {
-              this.currentSlide += 1;
+                return;
+              } else {
+                return;
             }
         }
-      }
+
+        this.currentSlide = nextSlide;
     }
 
     nextSlide() {
@@ -253,19 +254,17 @@ export default class Gallary {
       this.setStylePosition();
 
       this.setSettingParameters();
-
-      // this.settings.hasTimer && !this.isTimerGo &&  this.startTimer();
     }
 
     goToRightSlide(evt) {
         evt.preventDefault();
-        this.changeCurrentSlide();
+        this.changeCurrentSlide(this.currentSlide + 1);
         this.nextSlide();
     }
 
     goToLeftSlide(evt) {
         evt.preventDefault();
-        this.changeCurrentSlide(-1);
+        this.changeCurrentSlide(this.currentSlide - 1);
         this.nextSlide();
     }
 
@@ -273,7 +272,7 @@ export default class Gallary {
         evt.preventDefault();
         const currentTogle = evt.target.dataset.slideNum;
 
-        this.changeCurrentSlide(Number(currentTogle))
+        this.changeCurrentSlide(Number(currentTogle) - 1)
         this.nextSlide();
     }
 
@@ -288,6 +287,12 @@ export default class Gallary {
     }
 
     changeStyleBtn() {
+      if (!this.settings.isSliderNotRound) {
+        this.navLeftButton.classList.add(`${NavCurrentToggleClassName}`);
+        this.navRightButton.classList.add(`${NavCurrentToggleClassName}`);
+        return;
+      }
+
         if (this.currentSlide === 0) {
             this.navLeftButton.classList.remove(`${NavCurrentToggleClassName}`)
             this.navLeftButton.disabled = true;
@@ -322,7 +327,7 @@ export default class Gallary {
     startTimer() {
       console.log('start timer')
       this.timer = setInterval(()=> {
-        this.changeCurrentSlide();
+        this.changeCurrentSlide(this.currentSlide + 1);
 
         this.nextSlide();
         this.changeToggles();
