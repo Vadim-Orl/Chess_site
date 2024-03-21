@@ -4,7 +4,7 @@
   margin-bottom: 120px;
 
   @media (min-width: $desktop-width){
-    margin-bottom: 146px;
+    margin-bottom: 134px;
   }
 }
 
@@ -16,7 +16,7 @@
     text-align: left;
     justify-content: space-between;
     align-items:center;
-    margin-bottom: 0px;
+    margin-bottom: -10px;
   }
 }
 
@@ -65,7 +65,8 @@
   @media (min-width: $desktop-width){
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: start;
+    margin-left: -20px;
   }
 }
 
@@ -74,6 +75,7 @@
 
   @media (min-width: $desktop-width){
     padding-top: -20px;
+    margin-bottom: 55px;
 
     & .br--mobile {
       display: none
@@ -83,31 +85,51 @@
 
 //-------------------------------------------
 .support__img {
-  display: flex;
-  justify-content: center;
-  align-content:center;
-  margin-left: -$padding-mobile;
-  margin-right: -$padding-mobile;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 24px;
   order: 2;
+
   @media (min-width: $desktop-width) {
-    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.lecture__img {
+  display: block;
+
+  width: 335px;
+  height: 212px;
+
+  @media (min-width: $desktop-width) {
     width: 394px;
     height: 250px;
   }
 }
 
-
 .multiplayer__img {
-  display: flex;
+  display: block;
   margin-top: 14px;
   margin-bottom: 16px;
+
+  width: 335px;
+  height: 402px;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+
+    width: 510px;
+    height: 610px;
+  }
 }
 
 .multiplayer__info {
   @media (min-width: $desktop-width) {
     margin-top: 50px;
-    width: 704px;
+    width: 670px;
+    margin-left: 20px;
     margin-bottom: 60px;
   }
 }
@@ -119,7 +141,7 @@
   margin-bottom: 24px;
 
   @media (min-width: $desktop-width) {
-    width: 704px;
+    // width: 704px;
   }
 }
 

@@ -2,7 +2,7 @@
 .page-header {
   position: relative;
   background:
-              url('../../img/Chess.png') 26% 0% no-repeat,
+              url('../../img/bg-header.png') 26% 0% no-repeat,
               rgb(232, 221, 211, 0.6),
 ;
 background-size:cover;
@@ -10,7 +10,7 @@ background-size:cover;
     position: absolute;
     content: "";
     background:
-    url('../../img/bg-hs.png');
+    url('../../img/bg-mask.png');
 
     mix-blend-mode: multiply;
     left: 0;
@@ -33,14 +33,14 @@ background-size:cover;
   }
 
   @media (min-width: $desktop-width){
-    padding: 18px $margin-desktop 0;
-    height: 750px;
+    padding: 10px $margin-desktop 0;
+    height: 743px;
     background:
-      url('../../img/bg-desc.png') 26% 0% no-repeat,
+      url('../../img/bg-header--desc.png'),
       rgb(232, 221, 211);
-
+    background-repeat: no-repeat;
     background-size: auto;
-    background-position: 50% -4px;
+    background-position: 50% -17px;
 
     margin-bottom: 80px;
   }
@@ -53,10 +53,12 @@ background-size:cover;
 
 .page-header__logo {
   display: block;
-  margin-bottom: 30px;
+  width: 245px;
+  height: 36px;
+  margin-bottom: 34px;
 
   @media (min-width: $desktop-width){
-    margin-bottom: 52px;
+    margin-bottom: 60px;
   }
 }
 
