@@ -59,12 +59,14 @@ export default class Gallary {
         this.changeToggleText = this.changeToggleText.bind(this);
         this.changeStyleBtn = this.changeStyleBtn.bind(this);
 
-
         this.manageGallery();
         this.manageNav();
 
         this.setParameters();
-        this.setEvents();
+
+        if (this.checkDocWidth()) {
+          this.setEvents();
+        }
 
     }
 
@@ -124,6 +126,12 @@ export default class Gallary {
     }
 
     setParameters() {
+        if (this.checkDocWidth()) {
+          this.containerNode.style.cursor = 'grab'
+        } else {
+          this.lineNode.setAttribute('cursor', 'default');
+        }
+
         const coordsContainer = this.containerNode.getBoundingClientRect();
         this.containerWidth = coordsContainer.width;
 
@@ -174,7 +182,8 @@ export default class Gallary {
         this.setStyleTransition();
         this.setParameters();
         this.setEvents();
-
+        this.containerNode.style.cursor = 'grab';
+        
         this.settings.hasTimer && !this.isTimerGo && this.startTimer();
 
       } else {
@@ -182,11 +191,14 @@ export default class Gallary {
           this.x = 0;
           this.setStylePosition();
           this.destroyEvents();
+          this.lineNode.setAttribute('cursor', 'default');
+
         }
     }
 
     startDrag(evt) {
         evt.preventDefault();
+        this.containerNode.style.cursor = 'grabbing'
 
         this.currentSlideWasChange = false;
         this.settings.hasTimer && this.isTimerGo && this.stopTimer();
@@ -198,8 +210,11 @@ export default class Gallary {
     }
 
     stopDrag() {
+        this.containerNode.style.cursor = 'grab'
+
         window.removeEventListener('pointermove', this.dragging);
         this.nextSlide();
+
     }
 
     dragging(evt) {
