@@ -2,7 +2,7 @@
 .page-header {
   position: relative;
   background:
-              url('../../img/bg-header.png') 26% 0% no-repeat,
+              url('../img/bg-header.png') 26% 0% no-repeat,
               rgb(232, 221, 211, 0.6),
 ;
   background-size:cover;
@@ -11,7 +11,7 @@
     position: absolute;
     content: "";
     background:
-    url('../../img/bg-mask.png');
+    url('../img/bg-mask.png');
 
     mix-blend-mode: multiply;
     left: 0;
@@ -36,7 +36,7 @@
     padding: 10px $margin-desktop 0;
     height: 743px;
     background:
-      url('../../img/bg-header--desc.png'),
+      url('../img/bg-header--desc.png'),
       rgb(232, 221, 211);
     background-repeat: no-repeat;
     background-size: auto;
