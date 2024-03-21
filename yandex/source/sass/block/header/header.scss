@@ -145,6 +145,7 @@ background-size:cover;
   align-items: center;
   width: 335px;
   height: 47px;
+  z-index: 100;
 
   @media (min-width: $desktop-width){
     width: 263px;

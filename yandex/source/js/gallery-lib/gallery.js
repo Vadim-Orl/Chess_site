@@ -225,7 +225,7 @@ export default class Gallary {
 
     changeCurrentSlide(nextSlide) {
         if (nextSlide < 0) {
-              if (!this.settings.isSliderNotRound || this.settings.hasTimer) {
+              if (!this.settings.isSliderNotRound || (this.settings.hasTimer && this.isTimerGo)) {
                 this.currentSlide = this.countSliders - 1;
                 return;
               } else {
@@ -234,7 +234,7 @@ export default class Gallary {
         }
 
         if (nextSlide > this.countSliders - 1){
-              if (!this.settings.isSliderNotRound || this.settings.hasTimer) {
+              if (!this.settings.isSliderNotRound || (this.settings.hasTimer && this.isTimerGo)) {
                 this.currentSlide = 0;
                 return;
               } else {

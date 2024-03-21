@@ -31,7 +31,6 @@
   overflow: hidden;
   @media (min-width: $desktop-width){
     width: 1200px;
-    margin: 0;
   }
 
   @media (min-width: $desktop-width-medium){
@@ -86,10 +85,6 @@
     margin: 0;
     width: 320px;
     height: 320px;
-    // .img {
-    //   width: 320px;
-    //   height: 320px;
-    // }
   }
 }
 
@@ -143,6 +138,11 @@
   border: solid 1px $special_blue;
   margin: 0 auto;
   color: $special_blue;
+
+  &:hover {
+    color: $basic_white;
+    background-color: $special_blue;
+  }
 }
 
 .player__toggles {

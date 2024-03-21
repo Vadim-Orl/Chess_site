@@ -1,20 +1,5 @@
 
-.button--white {
-  position: relative;
-  color: $basic_dark-grey;
-  background-color: $basic_white;
 
-  @media (min-width: $desktop-width){
-    background-color: inherit;
-    border: solid 2px $basic_dark-grey;
-  }
-}
-
-.button--grey {
-  position: relative;
-  color: $basic_white;
-  background-color: $basic_dark-grey;
-}
 
 .page-main {
   margin-top: 48px;
