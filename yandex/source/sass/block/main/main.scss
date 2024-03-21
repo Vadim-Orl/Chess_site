@@ -1,31 +1,6 @@
 
 
 
-
-
-.title {
-  // @include Merriweather--400;
-  // text-transform: uppercase;
-}
-
-
-.button--white {
-  position: relative;
-  color: $basic_dark-grey;
-  background-color: $basic_white;
-
-  @media (min-width: $desktop-width){
-    background-color: inherit;
-    border: solid 2px $basic_dark-grey;
-  }
-}
-
-.button--grey {
-  position: relative;
-  color: $basic_white;
-  background-color: $basic_dark-grey;
-}
-
 .page-main {
   margin-top: 48px;
   padding: 0 $padding-mobile;
@@ -34,6 +9,10 @@
     margin-top: 65px;
     padding: 0 $margin-desktop;
   }
+
+  @media (min-width: $desktop-width-big){
+    padding: 0 $margin-desktop-big;
+  }
 }
 
 
@@ -41,9 +20,11 @@
   display: block;
   text-align: right;
 }
+
 .span-center {
   text-align: center;
 }
+
 .span--crossed {
   text-decoration: line-through $special_red;
   margin-right: 4px;
@@ -67,17 +48,19 @@
 .span__red {
   color: $special_red;
   font-weight: 700;
-  // @include Merriweather--400--bold;
 }
+
+.br--desc {
+  display: none;
+}
+
 
 @media (min-width: $desktop-width){
   .br--mobile {
     display: none;
   }
+  
   .br--desc {
     display: block;
   }
-}
-.br--desc {
-  display: none;
 }

@@ -1,7 +1,6 @@
 .footer {
   position: relative;
  background-color: #E9DED4;
- padding-bottom: 60px;
 }
 
 .footer__line {
@@ -13,38 +12,6 @@
   margin-bottom: 40px;
 }
 
-.footer__line__wrapper {
-  min-width: 1727px;
-  overflow: hidden;
-}
-
-.footer__line__list {
-
-  display: flex;
-  flex-wrap: nowrap;
-
-
-  margin-top: auto;
-  margin-bottom: 40px;
-
-  @include Merriweather--400;
-  font-size: 16px;
-  color: $basic_white;
-}
-
-
-
-.footer__line__list {
-  margin: 0;
-  margin-left: 24px;
-  margin-right: 24px;
-  list-style:disc;
-
-  width: 100%;
-}
-.list__item-red-line {
-  padding-right: 24px;
-}
 
 .footer__text {
   @include GolosText--400;
@@ -54,4 +21,15 @@
 
   line-height: 19px;
   letter-spacing: 0px;
+
+  @media (min-width: $desktop-width){
+    margin-left: $margin-desktop;
+    margin-right: $margin-desktop;
+  }
+
+  @media (min-width: $desktop-width-big){
+    margin-left: $margin-desktop-big;
+    margin-right: $margin-desktop-big;
+  }
+
 }

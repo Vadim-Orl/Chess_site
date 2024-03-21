@@ -18,25 +18,22 @@
    clip-path: inset(100%);
    clip: rect(0 0 0 0);
    overflow: hidden;
-
  }
+
 
 .page-body {
   @include GolosText--500;
   min-width: 320px;
   color: #313131;
 
-
-  @media (min-width: $desktop-width){
-    // margin: 0 $margin-desktop;
-  }
-
   margin-bottom: 500px;
 }
 
-.a {
+a {
   text-decoration: none;
   color:black;
+  cursor: pointer;
+
   &:visited {
     color:black;
   }
@@ -44,15 +41,59 @@
 
 .page__logo {
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &:active {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
 .button {
   border-radius: 66px;
   border: none;
+  &:disabled {
+    background-color: #D6D6D6;
+  }
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.button--white {
+  position: relative;
+  color: $basic_dark-grey;
+  background-color: $basic_white;
+
+  @media (min-width: $desktop-width){
+    background-color: inherit;
+    border: solid 2px $basic_dark-grey;
+
+
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $basic_dark-grey;
+    color: $basic_white;
+
+  }
+}
+
+.button--grey {
+  position: relative;
+  color: $basic_white;
+  background-color: $basic_dark-grey;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $special_yellow;
+    color: $basic_dark-grey;
+  }
 }

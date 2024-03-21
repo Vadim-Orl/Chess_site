@@ -45,38 +45,12 @@
   padding: 0;
 }
 
+@mixin margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @mixin border-help($size, $color) {
   outline: $color solid $size;
   outline-offset: -5px;
-}
-
-@mixin minus-margin-all {
-  @media (max-width: $mobile-width-only){
-    margin-left: -$margin-mobile;
-    margin-right: -$margin-mobile;
-  }
-
-  @media (min-width: $tablet-width){
-    margin-left: -$margin-tablet;
-    margin-right: -$margin-tablet;
-  }
-
-  @media (min-width: $desktop-width){
-    margin-left: -$margin-desktop;
-    margin-right: -$margin-desktop;
-  }
-}
-
-@mixin plus-padding-all {
-  @media (max-width: $mobile-width-only){
-    padding: 0 $margin-mobile ;
-  }
-
-  @media (min-width: $tablet-width){
-    padding: 0 $margin-tablet ;
-  }
-
-  @media (min-width: $desktop-width){
-    padding: 0 $margin-desktop ;
-  }
 }

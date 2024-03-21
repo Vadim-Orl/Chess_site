@@ -1,41 +1,75 @@
 .players {
-  margin-bottom: 90px;
+  margin-bottom: 86px;
+
+  @media (min-width: $desktop-width){
+    position: relative;
+    margin-bottom: 93px;
+  }
 }
 
 .players__title {
+
   @include Merriweather--400;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  margin-bottom: 18px;
+  margin-bottom: 40px;
+
+  @media (min-width: $desktop-width){
+    font-family: Merriweather;
+    font-weight: 400;
+    line-height: 65px;
+    font-size: 54px;
+    margin-bottom: 62px;
+
+  }
 }
 
 .players__list {
-  // margin: 0 20px;
+  @include margin-center;
+  width: 335px;
   overflow: hidden;
+  @media (min-width: $desktop-width){
+    width: 1200px;
+  }
+
+  @media (min-width: $desktop-width-medium){
+    width: 1200px;
+  }
 }
 
 .player__list--wrapper {
   display: flex;
-  width: 2170px;
+  min-width: 5170px;
   height: 388px;
-  margin: 0 -20px;
 
   transform: translateX(0px);
-  margin-bottom: 44px;
+  margin-bottom: 27px;
+
+  @media (min-width: $desktop-width){
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 44px;
+
+    height: 462px;
+  }
 }
 
 .players__item {
   @include GolosText--500;
   width: 335px;
   height: 100%;
-  // align-items:center;
   font-size: 24px;
   font-weight: 600;
   line-height: 29px;
   letter-spacing: 0px;
   margin-right: 20px;
-  // padding-top: 10px;
+
+  @media (min-width: $desktop-width){
+    padding-left: 37px;
+    padding-right: 37px;
+    width: 394px;
+  }
 }
 
 .players__author-image {
@@ -44,6 +78,13 @@
   margin-bottom: 25px;
   width: 244px;
   height: 244px;
+
+  @media (min-width: $desktop-width-medium){
+    margin-bottom: 28px;
+    margin: 0;
+    width: 320px;
+    height: 320px;
+  }
 }
 
 .reviews__author-info {
@@ -51,20 +92,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // font-family: Golos Text;
-  // font-family: Golos Text;
 
-  // line-height: 24px;
-  // letter-spacing: 0px;
-  // text-align: left;
-
-// text-align: left;
-
+  @media (min-width: $desktop-width){
+    margin-top: 24px;
+  }
 }
 
 
 .player__author-name {
-  // font-weight: 500;
   font-size: 24px;
   font-weight: bold;
   font-style: none;
@@ -72,17 +107,26 @@
 }
 
 .player__text {
-  // font-size: 20px;
-  // transform: translateX(10px);
+  @include GolosText--400;
   display: block;
   width: 100%;
-  // font-size: 16px;
-  // text-align: center;
   margin: 0 auto;
   font-size: 20px;
   font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  margin-bottom: 14px;
+
+.players {
+  .stages__nav {
+    @media (min-width: $desktop-width){
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: -3px;
+    }
+  }
 }
 
 .player__button {
@@ -93,6 +137,11 @@
   border: solid 1px $special_blue;
   margin: 0 auto;
   color: $special_blue;
+
+  &:hover {
+    color: $basic_white;
+    background-color: $special_blue;
+  }
 }
 
 .player__toggles {

@@ -6,12 +6,20 @@ $special_red: #F54932;
 $special_grey: #D0D0D0;
 $special_blue: #3057A2;
 $special_dark-grey2: #313131;
+$special_yellow: #FBCE51;
+
 
 
 $mobile-size: 375px;
-$mobile-width-only: 1365px;
-$desktop-width: 1366px;
+$mobile-width-only: 767px;
+$tablet-width: 768px;
+$tablet-width-only: 1219px;
+
+$desktop-width: 1220px;
+$desktop-width-medium: 1366px;
+$desktop-width-big: 1920px;
 
 $padding-mobile: 20px;
 $margin-tablet: 36px;
 $margin-desktop: 72px;
+$margin-desktop-big: 348.5px;
