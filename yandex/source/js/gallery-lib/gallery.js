@@ -1,15 +1,15 @@
-const GallaryLineClassName = 'gallery-line';
-const GallerySlideClassName = 'gallery-slide';
+const GallaryLineClassName = 'gallery-line',
+      GallerySlideClassName = 'gallery-slide',
 
-const NavBtnLeftClassName = 'navigation__button--left';
-const NavBtnRightClassName = 'navigation__button--right';
-const NavigateToggleTextClassName = 'navigattion__toggle-text'
+      NavBtnLeftClassName = 'navigation__button--left',
+      NavBtnRightClassName = 'navigation__button--right',
+      NavigateToggleTextClassName = 'navigattion__toggle-text',
 
-const NavigateTogglesClassName = 'slider__toggles'
-const NavigateToggleClassName = 'slider__toggle'
-const NavCurrentToggleClassName = 'slider__toggle--current'
+      NavigateTogglesClassName = 'slider__toggles',
+      NavigateToggleClassName = 'slider__toggle',
+      NavCurrentToggleClassName = 'slider__toggle--current',
 
-const DataAtributToggle = 'data-slide-num'
+      DataAtributToggle = 'data-slide-num';
 
 export default class Gallary {
     constructor(element, navigate, options = {}) {
@@ -86,7 +86,7 @@ export default class Gallary {
 
     manageGallery() {
         this.lineNode = this.containerNode.querySelector(`.${GallaryLineClassName}`);
-        this.slideNodes = Array.from(this.lineNode.querySelectorAll(`${GallerySlideClassName}`))
+        this.slideNodes = Array.from(this.lineNode.querySelectorAll(`${GallerySlideClassName}`));
     }
 
 
@@ -101,12 +101,12 @@ export default class Gallary {
             newToggle.setAttribute('type', 'button');
             newToggle.classList.add(`${NavigateToggleClassName}`);
 
-            this.navToggles.append(newToggle)
+            this.navToggles.append(newToggle);
           }
 
           this.toggleNodes = Array.from(this.navToggles.children);
-          this.toggleNodes[0].classList.add(`${NavCurrentToggleClassName}`)
-          this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index + 1)))
+          this.toggleNodes[0].classList.add(`${NavCurrentToggleClassName}`);
+          this.toggleNodes.map((el, index) => el.setAttribute(`${DataAtributToggle}`, (index + 1)));
         }
 
         if (this.settings.hasToggleText) {
@@ -143,25 +143,25 @@ export default class Gallary {
         this.debouncedResizeGallery = debounce(this.resizeGallery);
         window.addEventListener('resize', this.debouncedResizeGallery);
 
-        this.lineNode.addEventListener('pointerdown', this.startDrag)
-        window.addEventListener('pointerup', this.stopDrag)
-        window.addEventListener('pointercancel', this.stopDrag)
+        this.lineNode.addEventListener('pointerdown', this.startDrag);
+        window.addEventListener('pointerup', this.stopDrag);
+        window.addEventListener('pointercancel', this.stopDrag);
 
-        this.navRightButton.addEventListener('click', this.goToRightSlide)
-        this.navLeftButton.addEventListener('click', this.goToLeftSlide)
+        this.navRightButton.addEventListener('click', this.goToRightSlide);
+        this.navLeftButton.addEventListener('click', this.goToLeftSlide);
 
         this.settings.hasToggle && this.navToggles.addEventListener('click', this.goToCurrentSlide);
-    }
+    };
 
     destroyEvents() {
         window.removeEventListener('resize', this.debouncedResizeGallery);
 
-        this.lineNode.removeEventListener('pointerdown', this.startDrag)
-        window.removeEventListener('pointerup', this.stopDrag)
-        window.removeEventListener('pointercancel', this.stopDrag)
+        this.lineNode.removeEventListener('pointerdown', this.startDrag);
+        window.removeEventListener('pointerup', this.stopDrag);
+        window.removeEventListener('pointercancel', this.stopDrag);
 
-        this.navRightButton.removeEventListener('click', this.goToRightSlide)
-        this.navLeftButton.removeEventListener('click', this.goToLeftSlide)
+        this.navRightButton.removeEventListener('click', this.goToRightSlide);
+        this.navLeftButton.removeEventListener('click', this.goToLeftSlide);
         this.settings.hasToggle && this.navToggles.removeEventListener('click', this.goToCurrentSlide);
     }
 
@@ -181,7 +181,7 @@ export default class Gallary {
           this.resetStyleTransition();
           this.x = 0;
           this.setStylePosition();
-          this.destroyEvents()
+          this.destroyEvents();
         }
     }
 
@@ -194,18 +194,18 @@ export default class Gallary {
         this.clickX = evt.pageX;
         this.startX = this.x;
 
-        window.addEventListener('pointermove', this.dragging)
+        window.addEventListener('pointermove', this.dragging);
     }
 
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging);
-        this.nextSlide()
+        this.nextSlide();
     }
 
     dragging(evt) {
       evt.preventDefault();
 
-      this.dragX = evt.pageX
+      this.dragX = evt.pageX;
       const dragShift = this.dragX - this.clickX;
       const easing = dragShift / 5;
       this.x = Math.max(Math.min(this.startX + dragShift, easing), this.maximumX + easing);
@@ -220,7 +220,7 @@ export default class Gallary {
         this.changeCurrentSlide(this.currentSlide + 1);
       }
 
-      this.setStylePosition()
+      this.setStylePosition();
   }
 
     changeCurrentSlide(nextSlide) {
@@ -272,18 +272,18 @@ export default class Gallary {
         evt.preventDefault();
         const currentTogle = evt.target.dataset.slideNum;
 
-        this.changeCurrentSlide(Number(currentTogle) - 1)
+        this.changeCurrentSlide(Number(currentTogle) - 1);
         this.nextSlide();
     }
 
     changeToggleText() {
-      this.toggleText.innerText = `${this.currentSlide + 1}/${this.countSliders}`
+      this.toggleText.innerText = `${this.currentSlide + 1}/${this.countSliders}`;
     }
 
     changeToggles() {
         const currentToggle = this.navToggles.querySelector(`.${NavCurrentToggleClassName}`);
-        currentToggle.classList.remove(`${NavCurrentToggleClassName}`)
-        this.toggleNodes[this.currentSlide].classList.add(`${NavCurrentToggleClassName}`)
+        currentToggle.classList.remove(`${NavCurrentToggleClassName}`);
+        this.toggleNodes[this.currentSlide].classList.add(`${NavCurrentToggleClassName}`);;
     }
 
     changeStyleBtn() {
@@ -294,38 +294,36 @@ export default class Gallary {
       }
 
         if (this.currentSlide === 0) {
-            this.navLeftButton.classList.remove(`${NavCurrentToggleClassName}`)
+            this.navLeftButton.classList.remove(`${NavCurrentToggleClassName}`);
             this.navLeftButton.disabled = true;
         } else {
-            this.navLeftButton.classList.add(`${NavCurrentToggleClassName}`)
+            this.navLeftButton.classList.add(`${NavCurrentToggleClassName}`);
             this.navLeftButton.disabled = false;
         }
 
         if (this.currentSlide === this.countSliders - 1) {
-            this.navRightButton.classList.remove(`${NavCurrentToggleClassName}`)
+            this.navRightButton.classList.remove(`${NavCurrentToggleClassName}`);
             this.navRightButton.disabled = true;
-        } else {
-            this.navRightButton.classList.add(`${NavCurrentToggleClassName}`)
+        } else {;
+            this.navRightButton.classList.add(`${NavCurrentToggleClassName}`);
             this.navRightButton.disabled = false;
         }
     }
 
     // changeActiveSlide
     setStylePosition() {
-        this.lineNode.style.transform = `translate3d(${this.x}px, 0, 0)`
+        this.lineNode.style.transform = `translate3d(${this.x}px, 0, 0)`;
     }
 
     setStyleTransition() {
-        this.lineNode.style.transition = `all 0.5s ease 0s`
+        this.lineNode.style.transition = `all 0.5s ease 0s`;
     }
 
     resetStyleTransition() {
-        this.lineNode.style.transition = `all 0s ease 0s`
-
+        this.lineNode.style.transition = `all 0s ease 0s`;
     }
 
     startTimer() {
-      console.log('start timer')
       this.timer = setInterval(()=> {
         this.changeCurrentSlide(this.currentSlide + 1);
 
@@ -339,7 +337,6 @@ export default class Gallary {
 
     stopTimer() {
       this.isTimerGo = false;
-      console.log('stop timer')
       clearInterval(this.timer);
     }
 }
@@ -349,6 +346,6 @@ function debounce(func, time = 200) {
     let timer;
     return function (event) {
         clearTimeout(timer);
-        timer = setTimeout(func, time, event)
+        timer = setTimeout(func, time, event);
     }
 }

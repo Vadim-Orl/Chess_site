@@ -20,9 +20,11 @@
   display: block;
   text-align: right;
 }
+
 .span-center {
   text-align: center;
 }
+
 .span--crossed {
   text-decoration: line-through $special_red;
   margin-right: 4px;
@@ -48,14 +50,17 @@
   font-weight: 700;
 }
 
+.br--desc {
+  display: none;
+}
+
+
 @media (min-width: $desktop-width){
   .br--mobile {
     display: none;
   }
+  
   .br--desc {
     display: block;
   }
-}
-.br--desc {
-  display: none;
 }

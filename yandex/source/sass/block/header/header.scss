@@ -54,19 +54,21 @@
 .page-header__logo {
   position: relative;
   display: block;
-  width: 245px;
-  height: 36px;
-  margin-bottom: 34px;
+  width: 213px;
+  height: 32px;
+  margin-bottom: 40px;
   z-index: 100;
 
   @media (min-width: $desktop-width){
+    width: 245px;
+    height: 36px;
     margin-bottom: 60px;
   }
 }
 
 .header__content {
   display: block;
-  // z-index: 111;
+
   @media (min-width: $desktop-width){
     width: 542px;
   }
@@ -116,10 +118,11 @@
    .br--desctop {
     display: none;
    }
+
    @media (min-width: $desktop-width){
     text-align: center;
-
     margin-bottom: 40px;
+
     .br--mobile {
       display: none;
     }
