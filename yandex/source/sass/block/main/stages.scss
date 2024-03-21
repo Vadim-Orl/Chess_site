@@ -126,8 +126,8 @@
 
 
 .stages_block {
-  background: url('../../img/stampPaper.png') center center,
-              url('../../img/bg-mask.png');
+  background: url('../img/stampPaper.png') center center,
+              url('../img/bg-mask.png');
 
   mix-blend-mode: multiply;
 
@@ -154,8 +154,8 @@
     width: 100%;
 
     &:nth-child(2) {
-      background: url('../../img/stampPaper.png') center center,
-      url('../../img/bg-mask.png');
+      background: url('../img/stampPaper.png') center center,
+      url('../img/bg-mask.png');
 
       mix-blend-mode: multiply;
 
@@ -164,8 +164,8 @@
     }
 
     &:nth-child(n + 4) {
-      background: url('../../img/stampPaper.png') center center,
-      url('../../img/bg-mask.png');
+      background: url('../img/stampPaper.png') center center,
+      url('../img/bg-mask.png');
 
       mix-blend-mode: multiply;
     }
@@ -239,8 +239,8 @@
   @media (min-width: $desktop-width){
     display: block;
     background-color: rgb(129, 142, 150);
-    background: url('../../img/stampPaper.png') center center,
-    url('../../img/bg-mask.png');
+    background: url('../img/stampPaper.png') center center,
+    url('../img/bg-mask.png');
 
     mix-blend-mode: multiply;
     margin: 0;
