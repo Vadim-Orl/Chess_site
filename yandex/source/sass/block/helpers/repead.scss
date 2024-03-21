@@ -1,4 +1,4 @@
-.line--run {
+.ticker {
   display: flex;
   align-items:center;
   background-color: $special_red;
@@ -19,4 +19,27 @@
     font-size: 24px;
     line-height: 24px;
   }
+}
+
+.ticker__wrapper {
+  min-width: 1727px;
+  overflow: hidden;
+}
+
+
+.ticker__list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  margin-left: 24px;
+  margin-right: 24px;
+  list-style:disc;
+  width: 100%;
+
+  color: $basic_white;
+}
+
+
+.ticker__item {
+  padding-right: 24px;
 }

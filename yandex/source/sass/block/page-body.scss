@@ -29,9 +29,10 @@
   margin-bottom: 500px;
 }
 
-.a {
+a {
   text-decoration: none;
   color:black;
+  cursor: pointer;
 
   &:visited {
     color:black;
@@ -40,11 +41,11 @@
 
 .page__logo {
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &:active {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 

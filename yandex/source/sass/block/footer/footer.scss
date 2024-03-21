@@ -15,38 +15,38 @@
   margin-bottom: 40px;
 }
 
-.footer__line__wrapper {
-  min-width: 1727px;
-  overflow: hidden;
-}
+// .footer__line__wrapper {
+//   min-width: 1727px;
+//   overflow: hidden;
+// }
 
-.footer__line__list {
+// .footer__line__list {
 
-  display: flex;
-  flex-wrap: nowrap;
-
-
-  margin-top: auto;
-  margin-bottom: 40px;
-
-  // @include Merriweather--400;
-  // font-size: 16px;
-  color: $basic_white;
-}
+//   display: flex;
+//   flex-wrap: nowrap;
 
 
+//   margin-top: auto;
+//   margin-bottom: 40px;
 
-.footer__line__list {
-  margin: 0;
-  margin-left: 24px;
-  margin-right: 24px;
-  list-style:disc;
+//   // @include Merriweather--400;
+//   // font-size: 16px;
+//   color: $basic_white;
+// }
 
-  width: 100%;
-}
-.list__item-red-line {
-  padding-right: 24px;
-}
+
+
+// .footer__line__list {
+//   margin: 0;
+//   margin-left: 24px;
+//   margin-right: 24px;
+//   list-style:disc;
+
+//   width: 100%;
+// }
+// .list__item-red-line {
+//   padding-right: 24px;
+// }
 
 .footer__text {
   @include GolosText--400;
