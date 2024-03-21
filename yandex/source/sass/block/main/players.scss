@@ -30,7 +30,7 @@
   width: 335px;
   overflow: hidden;
   @media (min-width: $desktop-width){
-    width: 1200px;
+    width: 1000px;
   }
 
   @media (min-width: $desktop-width-medium){
@@ -65,9 +65,15 @@
   letter-spacing: 0px;
   margin-right: 20px;
 
+
+
   @media (min-width: $desktop-width){
     padding-left: 37px;
     padding-right: 37px;
+    width: 330px;
+  }
+  
+  @media (min-width: $desktop-width-medium){
     width: 394px;
   }
 }
