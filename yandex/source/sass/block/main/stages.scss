@@ -78,12 +78,7 @@
 }
 
 .stages__list--wrapper {
-  @include reset-list;
-  @include GolosText--500;
-  font-size: 18px;
-  display: grid;
-  grid-template-columns: repeat(7, 335px);
-  // grid-template-rows: 150px 150px ;
+  display: flex;
   overflow: hidden;
   flex-wrap: nowrap;
 
@@ -193,14 +188,23 @@
 .stages__item {
   @include GolosText--500;
 
-//   line-height: 22px;
-//   letter-spacing: 0px;
-//   text-align: left;
+  position: relative;
+  font-size: 18px;
 
-//   margin: 0;
-//   margin-bottom: 28px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
 
+  margin: 0;
+  margin-bottom: 28px;
 
+  span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 36px;
+    height: 36px;
 
     left: -52px;
     top: 0;
