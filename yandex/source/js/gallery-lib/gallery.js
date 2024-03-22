@@ -286,7 +286,7 @@ export default class Gallary {
     goToCurrentSlide(evt) {
         evt.preventDefault();
         const currentTogle = evt.target.dataset.slideNum;
-
+        console.log(currentTogle)
         if (currentTogle) {
           this.changeCurrentSlide(Number(currentTogle) - 1);
           this.nextSlide();

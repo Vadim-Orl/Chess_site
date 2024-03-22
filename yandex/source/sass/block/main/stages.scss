@@ -283,6 +283,8 @@
   display: flex;
   align-items:center;
   justify-content:space-around;
+  margin-right: 10px;
+  margin-left: 10px;
 
 
   .slider__toggle {
@@ -290,11 +292,7 @@
     height: 10px;
     border-radius: 100%;
     border: none;
-    margin-right: 10px;
 
-    &:first-child {
-      margin-left: 10px;
-    }
   }
 }
 
