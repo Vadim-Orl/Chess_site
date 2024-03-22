@@ -183,7 +183,7 @@ export default class Gallary {
         this.setParameters();
         this.setEvents();
         this.containerNode.style.cursor = 'grab';
-        
+
         this.settings.hasTimer && !this.isTimerGo && this.startTimer();
 
       } else {
@@ -287,8 +287,10 @@ export default class Gallary {
         evt.preventDefault();
         const currentTogle = evt.target.dataset.slideNum;
 
-        this.changeCurrentSlide(Number(currentTogle) - 1);
-        this.nextSlide();
+        if (currentTogle) {
+          this.changeCurrentSlide(Number(currentTogle) - 1);
+          this.nextSlide();
+        }
     }
 
     changeToggleText() {
