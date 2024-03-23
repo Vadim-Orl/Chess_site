@@ -9,7 +9,8 @@ const GallaryLineClassName = 'gallery-line',
       NavigateToggleClassName = 'slider__toggle',
       NavCurrentToggleClassName = 'slider__toggle--current',
 
-      DataAtributToggle = 'data-slide-num';
+      DataAtributToggle = 'data-slide-num',
+      TIME_FOR_TIMER = 4000;
 
 export default class Gallary {
     constructor(element, navigate, options = {}) {
@@ -347,7 +348,7 @@ export default class Gallary {
         this.nextSlide();
         this.changeToggles();
         this.changeStyleBtn();
-      }, 3000);
+      }, TIME_FOR_TIMER);
 
       this.isTimerGo = true;
     }
