@@ -74,9 +74,9 @@ img {
 
   }
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):active,
+  &:not([disabled]):focus {
     background-color: $basic_dark-grey;
     color: $basic_white;
 
@@ -88,9 +88,9 @@ img {
   color: $basic_white;
   background-color: $basic_dark-grey;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):active,
+  &:not([disabled]):focus {
     background-color: $special_yellow;
     color: $basic_dark-grey;
   }
